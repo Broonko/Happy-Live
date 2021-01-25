@@ -1,5 +1,5 @@
-const PostModel = require('../models/posts.model')
-const { handleError } = require('../utils')
+const PostModel = require('./posts.model')
+const { handleError } = require('../api/utils')
 
 module.exports = {
   createPost,
@@ -18,8 +18,6 @@ function createPost(req, res) {
 }
 
 function getPosts(req, res) {
-console.log(">>>>>>>>>>>>>>>>>>>>>>>>>hola")
-
   PostModel
     .find()
     .then(posts => {

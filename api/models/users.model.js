@@ -7,9 +7,10 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
+    lowercase: true,
     required: [true, 'Email is required'],
     validate: {
-      validator (value) {
+      validator(value) {
         return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(value)
       }
     },
@@ -19,19 +20,35 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  role: {
-    type: String,
-    enum: ['host', 'regular'],
-    required: false,
-    default: 'regular'
+  location: {
+    type: String
   },
-  birthDate: {
-    type: Date,
-    required: false
+  balance: {
+    type: Number,
+    default: 0
   },
   createdAt: {
-    type: Number,
+    type: Date,
     default: Date.now() // Get a timestamp :)
+  },
+  artist: {
+    genre: {
+      type: String,
+      required: false
+    },
+    bio: {
+      type: String,
+      maxlength: 150,
+      required: false
+    },
+    shows:[{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'shows'
+    }],
+    followers: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'users'
+    }]
   }
 })
 

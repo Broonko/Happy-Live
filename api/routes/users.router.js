@@ -1,15 +1,23 @@
 const router = require('express').Router()
+const { authUser } = require('../utils')
 
 const {
-  getAllUsers,
+  getAllArtists,
   getUserById,
-  deleteUserById,
-  updateUser
+  updateUser,
+  createArtist,
+  deleteUserById
 } = require('../controllers/users.controller')
 
-router.get('/', getAllUsers)//usando authUser sólo permitimos getAllUser a los user autorizados
-router.get('/:id', getUserById)
-router.delete('/:id', deleteUserById)
-router.put('/:id', updateUser)
+
+router
+  .get('/', getAllArtists)//funciona
+  // .get('/:id', getUserById)
+  .put('/me', authUser, updateUser)//funciona
+  .put('/me', authUser, createArtist)//funciona
+
+
+
+  // .delete('/:id', deleteUserById)
 
 module.exports = router
