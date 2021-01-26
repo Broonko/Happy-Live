@@ -3,35 +3,41 @@ const mongoose = require('mongoose')
 const showSchema = new mongoose.Schema({
     name: {
         type: String,
-        maxlength: 50, //se le puede poner un mensaje?
+        maxlength: 50,
+        required: true //se le puede poner un mensaje?
     },
     type: {
         type: String,
+        lowercase: true,
         enum: ['music', 'comedy', 'infantil'],
         required: [true, 'Type is required']
     },
     artist: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'artists'
+        ref: 'users'
     },
     date: {
-        type: Date,
+        type: String,
         required: [true, 'Date is required']
     },
     place: {
-        type: String
+        type: String,
+        required: true
     },
     duration: {
-        type: String
+        type: String,
+        required: true
     },
     price: {
-        type: Number
+        type: Number,
+        required: true
     },
     description: {
         type: String,
-        maxlength: 100
+        maxlength: 100,
+        required: true
     }
 })
 
-const showModel = mongoose.model('show', userSchema)
+const showModel = mongoose.model('show', showSchema)
 module.exports = showModel

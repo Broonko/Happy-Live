@@ -5,19 +5,19 @@ const {
   getAllArtists,
   getUserById,
   updateUser,
-  createArtist,
+  updateArtist,
+  getShowsByArtist,
   deleteUserById
 } = require('../controllers/users.controller')
 
-
 router
-  .get('/', getAllArtists)//funciona
+  .get('/', getAllArtists)
+  .get('/name', getShowsByArtist)
+  .put('/me', authUser, updateUser)
+  .put('/me/artist', authUser, updateArtist)
+  
+  
   // .get('/:id', getUserById)
-  .put('/me', authUser, updateUser)//funciona
-  .put('/me', authUser, createArtist)//funciona
-
-
-
   // .delete('/:id', deleteUserById)
 
 module.exports = router

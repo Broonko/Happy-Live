@@ -6,8 +6,9 @@ module.exports = {
   getAllArtists,
   getUserById,
   updateUser,
-  createArtist,
-  deleteUserById
+  updateArtist,
+  deleteUserById,
+  getShowsByArtist
 }
 
 function getAllArtists(req, res) {
@@ -48,7 +49,7 @@ function updateUser(req, res) {
     .catch((err) => handleError(err, res))
 }
 
-function createArtist(req, res) {
+function updateArtist(req, res) {
   console.log(res.locals.userId)
   console.log(req.body)
   UserModel
@@ -63,6 +64,39 @@ function createArtist(req, res) {
 }
 
 
+// function updateArtist(req, res) {
+//   // console.log(res.locals.userId)
+//   // console.log(res.locals.artist.genre)
+//   // console.log(req.body)
+//   if (res.locals.artist.genre) {
+//   UserModel
+//     .findByIdAndUpdate(res.locals.userId, req.body, {
+//       new: true,
+//       runValidators: true
+//     })
+//     .then(response => res.json({
+//       name: response.name
+//     }))
+//     .catch((err) => handleError(err, res))
+//   } else {
+//       console.log('No eres un artista')
+//       res.send('No eres un artista')
+//   }
+// }
+
+
+function getShowsByArtist(req, res) {
+
+  console.log(req.query.name)
+  UserModel
+      .findOne(req.query)
+      .then(response => {
+        console.log(response.artist.shows)
+        res.json(response.artist.shows)
+      })
+      
+      .catch((err) => handleError(err, res))
+}
 
 
 
