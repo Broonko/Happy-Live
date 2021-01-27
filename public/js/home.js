@@ -9,31 +9,25 @@ axios
         newUser.innerHTML = localStorage.name
         user.appendChild(newUser)
 
-        const artists = document.getElementById('artistList')
-        response.data.forEach(artist => {
-            const newArtist = document.createElement('li')
-            newArtist.innerHTML = artist
-            artists.appendChild(newArtist)
-        })
+        // const artists = document.getElementById('artistList')
+        // response.data.forEach(artist => {
+        //     const newArtist = document.createElement('li')
+        //     newArtist.innerHTML = artist
+        //     artists.appendChild(newArtist)
+           
+        // })
     })
     .catch(err => { alert('do not have permission') })
 
-axios
-    .get('http://localhost:3000/api/shows', { headers: { token: localStorage.getItem('token') } })
-    .then(response => {
-        console.log(response.data)
 
-        const shows = document.getElementById('showList')
-        response.data.forEach(show => {
-            const newShow = document.createElement('li')
-            newShow.innerHTML = show.name
-            shows.appendChild(newShow)
-        })
-    })
-    .catch(err => { alert('do not have permission') })
 
 
 document.getElementById('logout').addEventListener('click', () => {
     localStorage.clear()
     window.location.reload()
 })
+
+
+// function goShows() {
+//     window.location = "http://localhost:3000/shows.html"
+// }

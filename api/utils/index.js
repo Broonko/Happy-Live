@@ -4,7 +4,7 @@ const UserModel = require('../models/users.model')
 // Authenticate Middleware
 function authUser(req, res, next) {
 console.log("*******authUser working********")
-// console.log(req.headers.token)
+ console.log(req.headers.token)
   if (!req.headers.token) {
     res.status(403).json({ error: 'No Token found' })
   } else {
@@ -17,6 +17,7 @@ console.log("*******authUser working********")
           res.locals.userId = user._id
           res.locals.artist = user.artist
           res.locals.artistName = user.name//mantiene la info del usuario registrado
+          console.log("*******authUser working********")
           next()
         })
         .catch(err => res.json(err))

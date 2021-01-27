@@ -9,6 +9,8 @@ document.getElementById('signup').addEventListener('click', () => {
             localStorage.setItem('token', res.data.token)
             localStorage.setItem('email', res.data.email)
             localStorage.setItem('name', res.data.name)
+            localStorage.setItem('_id', res.data._id)
+
             goHome()
         })
         .catch((err) => {
@@ -27,6 +29,9 @@ document.getElementById('login').addEventListener('click', () => {
                 localStorage.setItem('token', res.data.token)
                 localStorage.setItem('email', res.data.email)
                 localStorage.setItem('name', res.data.name)
+                localStorage.setItem('_id', res.data._id)
+
+                console.log(res.data)
                 goHome()
             } else {
                 alert("Wrong data entered")

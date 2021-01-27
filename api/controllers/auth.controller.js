@@ -18,7 +18,7 @@ function signUp(req, res) {
                 password: encryptedPasswd
             })
             .then(user => {
-                const data = { email: user.email, name: user.name }//id: user._id, name: user.name 
+                const data = { email: user.email, name: user.name, _id: user._id}//id: user._id, name: user.name 
                 const token = jwt.sign(data, process.env.SECRET) // { expiresIn: '7d' })
                 res.status(200).json({ token: token, ...data })//{ name: user.name, email: user.mail } //.send('usuario creado')
             })
@@ -33,7 +33,7 @@ function login(req, res) {
             if (!user) { return res.json({ Error: 'wrong email' }) }
             bcrypt.compare(req.body.password, user.password, (err, result) => {
                 if (!result) { return res.json({ Error: `wrong password for ${req.body.email}` }) }
-                const data = { name: user.name, email: req.body.email }//coger de user.(req.body.name no existe en este caso)
+                const data = { name: user.name, email: req.body.email, _id: user._id }//coger de user.(req.body.name no existe en este caso)
                 const token = jwt.sign(data, process.env.SECRET, { expiresIn: '7d' })
                 res.status(200).json({ token: token, ...data })//return??
             })

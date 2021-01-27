@@ -28,6 +28,8 @@ function getAllArtists(req, res) {
 }
 
 function getUserById(req, res) {
+  console.log("+++++++" + req.params.id)
+  console.log(res.locals.userId)
   UserModel
     .findById(req.params.id)
     .then(response => res.json(response))
@@ -43,9 +45,7 @@ function updateUser(req, res) {
       new: true,
       runValidators: true
     })
-    .then(response => res.json({
-      name: response.name
-    }))
+    .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
 
@@ -55,11 +55,12 @@ function updateArtist(req, res) {
   UserModel
     .findByIdAndUpdate(res.locals.userId, req.body, {
       new: true,
-      runValidators: true
+      runValidators: true,
+      upsert: false
     })
-    .then(response => res.json({
-      name: response.name
-    }))
+    .then(response => {
+      console.log(response)
+      res.json(response)})
     .catch((err) => handleError(err, res))
 }
 
