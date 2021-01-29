@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Profile</title>
+    <script src="js/protect.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Be an artist</h1>
+    <br>
+    <form class="row g-3">
+        <div class="col-4 mt-3">
+            <label for="editGenre" class="form-label">Genre</label>
+            <select type="text" class="form-control" id="editGenre">
+                <option selected>Choose...</option>
+                <option>Music</option>
+                <option>Comedy</option>
+                <option>Infantil</option>
+            </select>
+        </div>
+        <div class="col-12 mt-4">
+            <label for="editBio" class="form-label">Bio</label>
+            <input type="text" class="form-control" id="editBio" placeholder="Explain who you are" </input>
+        </div>
+       
+        <div class="col-12 mt-4">
+        
+            <button id="beAnArtist" type="submit" class="btn btn-primary">Sign in</button>
+       
+        </div>
+        
+    </form>
+
+
+
+
+    <script src="js/beArtist.js"></script>
+
+</body>
+
+</html>

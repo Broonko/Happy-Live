@@ -4,50 +4,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Home</title>
+    <!-- <script src="js/protect.js"></script> -->
 </head>
 
 <body>
-    <h1>Happy Live</h1>
 
-    <h2>Sign Up</h2>
+    <div class="container-fluid">
 
-    <label for="signup_name">
-        name
-        <input type="text" id="signup_name">
-    </label>
-    <label for="signup_email">
-        email
-        <input type="text" id="signup_email">
-    </label>
-    <label for="signup_password">
-        password
-        <input type="password" id="signup_password">
-    </label>
-    <button id="signup">SIGN UP</button>
+        <header class="d-flex beta">
+            <div class="p-2 flex-grow-1 ">
+                <a class=" beta" href="http://localhost:3000/index.html">
+                    <img src="images/Logo.gif" alt="Logo" width="100" height="100" class="d-inline-block align-center">
+                    Happy Live
+                </a>
+            </div>
+            <div class="cp-2" href="">
+                <button type="submit" class="button mt-4" id="logout">LOGOUT</button>
+                <button type="submit" class="button mt-4" id="loginh">LOGIN</button>
 
-    <hr>
+            </div>
+            <div class="p-2">
+                <a id="userName" class="nav-link" href="http://localhost:3000/profile.html">
+                    <img class="mt-2 ms-1" src="images/user.png" alt="UserImagen" width="40">
+                </a>
+            </div>
+        </header>
 
-    <h2>Login</h2>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <div class="">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="http://localhost:3000/shows.html">Musica</a>
+                        <a class="nav-link" href="#">Humor</a>
+                        <a class="nav-link" href="#">Infantil</a>
+                        <a class="nav-link" href="http://localhost:3000/artists.html">Artistas</a>
+                        <a class="nav-link" href="http://localhost:3000/profile.html">Perfil</a>
+                        <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+                    </div>
+                </div>
+            </div>
+        </nav>
 
-    <label for="login_email">
-        email
-        <input type="text" id="login_email">
-    </label>
-    <label for="login_password">
-        password
-        <input type="password" id="login_password">
-    </label>
-    <button id="login">LOGIN</button>
+        <div class="input-group">
+            <input class="form-control " placeholder="Type name artist or show to search...">
+            <!-- <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button> -->
+            <div class="mt-2">
+                <button type="submit" class="btn btn-warning">Search</button>
+            </div>
+        </div>
+        <figure class="text-center">
+            <blockquote class="blockquote">
+                <h3>Welcome to HAPPY LIVE</h3>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+                your unique show
+                <!-- <cite title="Source Title">Source Title</cite> -->
+            </figcaption>
+        </figure>
+        <br>
 
+        <section>
+            <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carouselIndicators" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carouselIndicators" data-bs-slide-to="2"></li>
+                    <li data-bs-target="#carouselIndicators" data-bs-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="images/arianasing.jpg" class="d-block w-100" alt="Ariana">
+                    </div>
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="images/rosalia.jpg" class="d-block w-100" alt="Rosalia">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="images/vetusta.jpg" class="d-block w-100" alt="Vetusta">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="images/zahara.jpg" class="d-block w-100" alt="Zahara">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselIndicators" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </section>
+
+    </div>
+    <!-- https://youtu.be/cZOQzGmhNZ8 -->
+
+    <!-- <button id="logout">LOGOUT</button><br><br> -->
+
+    <!-- <ul id="artistList">
+        <h3>Artist List</h3>
+
+    </ul> -->
+    <!-- <ul id="showList">
+        <h3>Show List</h3>
+    </ul> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/home.js"></script>
 
 </body>
 

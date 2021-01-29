@@ -14,18 +14,28 @@ axios
         //     const newArtist = document.createElement('li')
         //     newArtist.innerHTML = artist
         //     artists.appendChild(newArtist)
-           
+
         // })
     })
     .catch(err => { alert('do not have permission') })
 
 
+// document.getElementById('loginh').addEventListener('click', () => {
+//     // localStorage.clear()
+//     window.location = "http://localhost:3000/login.html"
+// })
 
+document.getElementById('loginh').addEventListener('click', () => {
+    // localStorage.clear()
+    window.location = "http://localhost:3000/login.html"
+})
 
 document.getElementById('logout').addEventListener('click', () => {
     localStorage.clear()
     window.location.reload()
 })
+
+
 
 
 // function goShows() {

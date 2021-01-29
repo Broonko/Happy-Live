@@ -1,0 +1,80 @@
+
+  @import url('https://fonts.googleapis.com/css?family=Exo');
+
+  .image {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.1);
+    height: 250px;
+    overflow: hidden;
+    margin: 15px auto;
+    position: relative;
+    width: 250px;
+  }
+  
+  figure img {
+    border-radius: 5px;
+    height: 100%;
+    transition: all .23s ease;
+    width: 100%;
+  }
+  
+  .image figcaption {
+    color: #555;
+    font-family: 'Exo';
+    height: 100%;
+    left: 0;
+    line-height: 250px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    transition: all .23s ease;
+    width: 100%;
+  }
+  
+  .image.fade figcaption {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .image.push figcaption {
+    top: 0;
+    transform: translateY(250px);
+  }
+  
+  .image.push:hover > img {
+    transform: translateY(-250px);
+  }
+  
+  .image.push:hover > figcaption {
+    transform: translateY(0px);
+  }
+  
+  .image.fade:hover > img {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .image.fade:hover > figcaption {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Form styles */
+  form {
+    margin: 20px auto;
+    width: 150px;
+  }
+  
+  form label {
+    font-family: 'Segoe UI', 'Open Sans';
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  form select {
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    font-family: 'Segoe UI', 'Open Sans';
+    margin: 0 0 0 10px;
+    padding: 0 1rem;
+  }

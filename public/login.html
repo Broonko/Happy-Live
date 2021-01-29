@@ -1,82 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.79.0">
-    <title>Signin Template · Bootstrap v5.0</title>
-    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/"> -->
-    <link href="signin.css" rel="stylesheet">
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <!-- Favicons -->
-    <!-- <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
-    <meta name="theme-color" content="#7952b3"> -->
-    <!-- <style> 
-    </style>
- -->
-    <!-- Custom styles for this template -->
-    <!-- <img class="mb-4" src="images/Logo.gif" alt="" width="75" height="75"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
 
+    <title>Document</title>
 </head>
 
-<!-- <div class="container-fluid">
-    <header>
-        
-        <a class="">
-            <img src="images/Logo.gif" alt="Logo" width="75" height="75" class="d-inline-block align-center">
-            Happy Live
-        </a>
-    </header>
-</div> -->
+<body>
+    <h1>Happy Live</h1>
 
-<body class="text-center">
-    <main class="form-signin">
-        <form>
+    <h2>Sign Up</h2>
 
-            <img class="mb-4" src="images/Logo.gif" alt="" width="75" height="75">
-            <h1 class="h3 mb-3 fw-normal">Login</h1>
-            <label for="inputEmail" class="visually-hidden">Email address</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-            <label for="inputPassword" class="visually-hidden">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
-            <button class="w-100 btn btn-lg btn-warning mb-5" type="submit">Login</button>
-        </form>
-        <form>
-            <h1 class="h3 mb-3 mt-3 fw-normal">Please Sign up</h1>
-            <label for="inputName" class="visually-hidden">Name</label>
-            <input type="name" id="inputName" class="form-control" placeholder="Name" required autofocus>
-            <label for="inputEmail" class="visually-hidden">Email address</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-            <label for="inputPassword" class="visually-hidden">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
-            <button class="w-100 btn btn-lg btn-warning" type="submit">Sign up</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
-        </form>
-    </main>
+    <label for="signup_name">
+        name
+        <input type="text" id="signup_name">
+    </label>
+    <label for="signup_email">
+        email
+        <input type="text" id="signup_email">
+    </label>
+    <label for="signup_password">
+        password
+        <input type="password" id="signup_password">
+    </label>
+    <button id="signup">SIGN UP</button>
+
+    <hr>
+
+    <h2>Login</h2>
+
+    <label for="login_email">
+        email
+        <input type="text" id="login_email">
+    </label>
+    <label for="login_password">
+        password
+        <input type="password" id="login_password">
+    </label>
+    <button id="login">LOGIN</button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/login.js"></script>
 

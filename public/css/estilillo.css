@@ -1,0 +1,14 @@
+#hoverImg .cc-imagewrapper {overflow: hidden; position: relative; display: block; width: 100%; height: 100%;}
+#hoverImg .cc-imagewrapper figcaption  {text-transform: uppercase !important; font-size: 28px !important; font-weight: bold !important; position: absolute !important; top: 50% !important; left: 0 !important; right: 0 !important; margin: auto; width: 100% !important; max-width: 80% !important; color: #111 !important;line-height: 1.5 !important; -webkit-transition: -webkit-transform 0.35s, color 0.35s; transition: transform 0.35s, color 0.35s; -webkit-transform: translate3d(0,-50%,0); transform: translate3d(0,-50%,0);}
+#hoverImg .cc-imagewrapper:hover figcaption {color: #fff !important; -webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0); transform: translate3d(0,-50%,0) translate3d(0,-40px,0);}
+#hoverImg .cc-imagewrapper::before {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 75%); background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 75%); content: ''; opacity: 0; -webkit-transform: translate3d(0,50%,0); transform: translate3d(0,50%,0); -webkit-transition: opacity 0.35s, -webkit-transform 0.35s; transition: opacity 0.35s, transform 0.35s;}
+#hoverImg .cc-imagewrapper:hover::before {opacity: 1; -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0);}
+#hoverImg .cc-imagewrapper a::after {content:'leer más'; position: absolute; bottom: 0; left: 0; right: 0; margin: 0 auto; width: 100%; max-width: 180px; opacity: 0; -webkit-transform: translate3d(0,100%,0); transform: translate3d(0,100%,0); -webkit-transition: opacity 0.35s, -webkit-transform 0.35s; transition: opacity 0.35s, transform 0.35s; font-size: 14px; padding: 1.2em; color: #FFF; text-transform: uppercase; border: 1px solid #FFF; cursor: pointer;}
+#hoverImg .cc-imagewrapper:hover a::after {opacity: 1; -webkit-transform: translate3d(0,-250%,0); transform: translate3d(0,-250%,0);}
+#hoverImg .cc-imagewrapper a:hover::after {background: #000; border-color:#000; color: #FFF !important; -webkit-transition: all 0.3s ease 0s; transition: all 0.3s ease 0s;}
+#hoverImg .cc-imagewrapper a {cursor: default !important;}
+@media only screen and (max-width:1024px) {
+#hoverImg .cc-imagewrapper figcaption {color: #fff !important; -webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0); transform: translate3d(0,-50%,0) translate3d(0,-40px,0);}
+#hoverImg .cc-imagewrapper::before {opacity: 1; -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0);}
+#hoverImg .cc-imagewrapper a::after {opacity: 1; -webkit-transform: translate3d(0,-200%,0) !important; transform: translate3d(0,-200%,0) !important;}
+}

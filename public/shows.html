@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Shows</title>
     <script src="js/protect.js"></script>
 </head>
@@ -19,10 +19,40 @@
 
     <ul id="showList">
         <h3>Shows List</h3>
+
+        <!DOCTYPE html>
+<html>
+<head>
+<title>Efecto de zoom en una imagen y texto con CSS3</title>
+<style type="text/css">
+    .zoom{
+        /* Aumentamos la anchura y altura durante 2 segundos */
+        transition: width 2s, height 2s, transform 2s;
+    }
+    .zoom:hover{
+        /* tranformamos el elemento al pasar el mouse por encima al doble de
+           su tamaño con scale(2). */
+        transform : scale(2);
+    }
+</style>
+</head>
+ 
+<body>
+<h2>Efecto zoom</h2>
+<div style='text-align:center;'>
+    <div class="zoom">Efecto de zoom con CSS3</div>
+    <img class="zoom" src="images/PearlJam.jpg" />
+</div>
+</body>
+</html>
     </ul>
 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="js/shows.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/shows.js"></script>
 
 </body>
 
