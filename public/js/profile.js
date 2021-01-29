@@ -11,10 +11,6 @@ axios
         // <dd class="col-md-5">${response.data.name}</dd>` 
         // user.appendChild(newUser)
 
-        
-        
-        
-
         let user = document.getElementById('profileName')
         let newUser = document.createElement('dd')
         newUser.innerHTML = response.data.name

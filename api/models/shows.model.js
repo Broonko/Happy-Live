@@ -3,13 +3,13 @@ const mongoose = require('mongoose')
 const showSchema = new mongoose.Schema({
     name: {
         type: String,
-        maxlength: 50,
+        maxlength: 100,
         required: true //se le puede poner un mensaje?
     },
     type: {
         type: String,
         lowercase: true,
-        enum: ['music', 'comedy', 'infantil'],
+        enum: ['music', 'comedy', 'kids'],
         required: [true, 'Type is required']
     },
     artist: {
@@ -34,8 +34,11 @@ const showSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        maxlength: 100,
+        maxlength: 150,
         required: true
+    },
+    photo: {
+        type: String
     }
 })
 

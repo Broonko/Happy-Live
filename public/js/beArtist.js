@@ -11,8 +11,4 @@ document.getElementById('beAnArtist').addEventListener('click', () => {
             window.location = "http://localhost:3000/profile.html"
         })
         .catch(err => { alert('do not have permission') })
-
-
-    // localStorage.clear()
-    // window.location = "http://localhost:3000/profile.html"
 })

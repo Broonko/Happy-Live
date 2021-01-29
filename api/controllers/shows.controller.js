@@ -16,6 +16,7 @@ function createShow(req, res) {
     console.log(res.locals.artist.genre)
     console.log(res.locals.artistName)
     if (res.locals.artist.genre) {
+        console.log("......" + res.locals.artist.genre)
         ShowModel
             .create({
                 name: req.body.name,
@@ -28,6 +29,7 @@ function createShow(req, res) {
                 description: req.body.description
             })
             .then(response => {
+                console.log("hola response")
                 console.log("////" + res.locals.userId)
                 console.log("ppppp" + res.locals.artist)
                 UserModel

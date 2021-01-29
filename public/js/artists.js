@@ -19,15 +19,3 @@ axios
     })
     .catch(err => { alert('do not have permission') })
 
-//     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-// var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-//   return new bootstrap.Tooltip(tooltipTriggerEl)
-// })
-
-// let image = document.querySelector('.image');
-// let select = document.getElementById('effect');
-
-// select.addEventListener('change', function (e) {
-//   image.className = `image ${this.value}`;
-// });
-

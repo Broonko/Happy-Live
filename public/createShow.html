@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Create Show</title>
+    <script src="js/protect.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+
+    <div class="container-fluid">
+
+        <header class="d-flex beta">
+            <div class="p-2 flex-grow-1 ">
+                <a class=" beta" href="http://localhost:3000/index.html">
+                    <img src="images/Logo.gif" alt="Logo" width="100" height="100" class="d-inline-block align-center">
+                    Happy Live
+                </a>
+            </div>
+            <div class="cp-2" href="">
+                <button type="submit" class="button mt-4" id="logout">LOGOUT</button>
+                <button type="submit" class="button mt-4" id="loginh">LOGIN</button>
+            </div>
+            <div class="p-2">
+                <a id="userName" class="nav-link" href="http://localhost:3000/profile.html">
+                    <img class="mt-2 ms-1" src="images/user.png" alt="UserImagen" width="40">
+                </a>
+            </div>
+        </header>
+        <h1>Create your show</h1>
+        <br>
+        <form class="row g-3">
+            <div class="col-12 mt-4">
+                <label for="createName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="createName" placeholder="Give it a nice name">
+            </div>
+            <div class="col-4 mt-4">
+                <label for="createType" class="form-label">Type</label>
+                <input class="form-control" list="datalistOptions" id="createType" placeholder="Choose...">
+                <datalist id="datalistOptions">
+                    <option value="Music">
+                    <option value="Comedy">
+                    <option value="Kids">
+                </datalist>
+            </div>
+            <div class="col-2 mt-4">
+                <label for="createDate" class="form-label">Date</label>
+                <input type="text" class="form-control" id="createDate" placeholder="">
+            </div>
+            <div class="col-4 mt-4">
+                <label for="createPlace" class="form-label">Place</label>
+                <input type="text" class="form-control" id="createPlace" placeholder="">
+            </div>
+            <div class="col-1 mt-4">
+                <label for="createDuration" class="form-label">Duration</label>
+                <input type="text" class="form-control" id="createDuration" placeholder="">
+            </div>
+            <div class="col-1 mt-4">
+                <label for="createPrice" class="form-label">Price</label>
+                <input type="text" class="form-control" id="createPrice" placeholder="">
+            </div>
+            <div class="col-12 mt-4">
+                <label for="createDescription" class="form-label">Description</label>
+                <input type="text" class="form-control" id="createDescription" placeholder="">
+            </div>
+            <div class="col-12 mt-4">
+                <label for="createPhoto" class="form-label">File input</label>
+                <input class="form-control" id="createPhoto" type="file">
+            </div>
+
+            <div class="col-12 mt-4">
+                <button id="createShow" type="submit" class="btn btn-warning">Create</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="js/createShow.js"></script>
+
+</body>
+
+</html>
