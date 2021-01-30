@@ -1,5 +1,5 @@
-var urlParams = new URLSearchParams(window.location.search);
-let idArtist = urlParams.get('id') 
+// var urlParams = new URLSearchParams(window.location.search);
+// let idArtist = urlParams.get('id') 
 
 axios
     .get('http://localhost:3000/api/users/me', { headers: { token: localStorage.getItem('token') } })
@@ -53,21 +53,20 @@ axios
                 console.log(show)
                 user = document.getElementById('profileShows')
                 newUser = document.createElement('div')
-                newUser.setAttribute('class', 'container-fluid')
+                newUser.setAttribute('class', 'col')
                 newUser.innerHTML = `
-                   
-                        <div class="col-sm-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">${show.name}     ${show.type}</h5>
-                                    <p class="card-text">${show.place}</p>
-                                    <p id="showDuration">${show.duration}      ${show.price} eur</dt>
-                                    <p id="showDescription"> ${show.description}</p>
-                                    <a href="#" class="btn btn-success">Buy ticket</a>
-                                </div>
+                    <div class="card h-100">
+                        <img src="images/DavidGuetta.jpg" class="card-img-top" alt="...">
+                        <div class="card-header border-success text-end"> <a href="#" class="btn btn-success">Buy ticket</a></div>
+                            <div class="card-body">
+                                <p><h5 class="card-title">${show.name}</h5></p>
+                                <p class="card-text">Place: ${show.place}</p>
+                                <p id="showDuration">Duration: ${show.duration}&emsp;&ensp;Price: ${show.price} eur</dt>
+                                <p id="showDescription"> ${show.description}</p>
                             </div>
-                        </div> 
-                    `
+                        </div>
+                    </div>
+                  `
                 user.appendChild(newUser)
             })
 

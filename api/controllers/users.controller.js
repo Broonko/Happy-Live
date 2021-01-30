@@ -34,6 +34,10 @@ function getAllArtists(req, res) {
 function getUserById(req, res) {
   UserModel
     .findById(req.params.id)
+    .populate({
+      path: 'artist.shows',
+      'model': 'show'
+    })
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }

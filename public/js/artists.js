@@ -10,13 +10,16 @@ axios
         // newUser.innerHTML = localStorage.name
         // user.appendChild(newUser)
 
-        const artists = document.getElementById('artistList')
+        const artists = document.getElementById('artistsPhotos')
         response.data.forEach(artist => {
             // console.log(artist)
             // console.log(`http://localhost:3000/profilePublic.html?id=${artist.id}`)
-            const newArtist = document.createElement('a')
+            let newArtist = document.createElement('a')
             newArtist.setAttribute('href', `http://localhost:3000/profilePublic.html?id=${artist.id}`)
             newArtist.innerHTML = artist.name
+            //poner aqui artist.photo// tengo que crear artistas reales con una foto
+            //y poner la ruta images/ en artist.photo
+            //al picar en la foto ira al perfil del artista
             artists.appendChild(newArtist)
            
         })
