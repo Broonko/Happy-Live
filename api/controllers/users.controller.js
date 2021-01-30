@@ -5,10 +5,11 @@ const { handleError } = require('../utils')
 module.exports = {
   getAllArtists,
   getUserById,
+  getProfile,
   updateUser,
   updateArtist,
-  deleteUserById,
-  getShowsByArtist
+  deleteUserById
+
 }
 
 function getAllArtists(req, res) {
@@ -19,7 +20,10 @@ function getAllArtists(req, res) {
       response.forEach(elem => {
         if (elem.artist.genre) {
           console.log(elem.name)
-          result.push(elem.name)
+          console.log(elem._id)
+          result.push({
+            name: elem.name,
+            id: elem._id})
         }
       })
       res.send(result)
@@ -28,10 +32,20 @@ function getAllArtists(req, res) {
 }
 
 function getUserById(req, res) {
-  console.log("+++++++" + req.params.id)
-  console.log(res.locals.userId)
   UserModel
     .findById(req.params.id)
+    .then(response => res.json(response))
+    .catch((err) => handleError(err, res))
+}
+
+function getProfile(req, res) {
+  console.log("++++++" + res.locals.userId)
+  UserModel
+    .findById(res.locals.userId)
+    .populate({
+      path: 'artist.shows',
+      'model': 'show'
+    })
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
@@ -60,7 +74,8 @@ function updateArtist(req, res) {
     })
     .then(response => {
       console.log(response)
-      res.json(response)})
+      res.json(response)
+    })
     .catch((err) => handleError(err, res))
 }
 
@@ -86,18 +101,7 @@ function updateArtist(req, res) {
 // }
 
 
-function getShowsByArtist(req, res) {
 
-  console.log(req.query.name)
-  UserModel
-      .findOne(req.query)
-      .then(response => {
-        console.log(response.artist.shows)
-        res.json(response.artist.shows)
-      })
-      
-      .catch((err) => handleError(err, res))
-}
 
 
 

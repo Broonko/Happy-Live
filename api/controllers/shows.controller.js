@@ -5,6 +5,7 @@ const { json } = require('express')
 
 module.exports = {
     createShow,
+    getShowsByArtist,
     getShows,
     getShowsByName,
     getShowsByGenre
@@ -68,6 +69,19 @@ function getShows(req, res) {
         })
         .catch((err) => handleError(err, res))
 }
+
+function getShowsByArtist(req, res) {
+
+    console.log(req.query.name)
+    UserModel
+        .findOne(req.query)
+        .then(response => {
+          console.log(response.artist.shows)
+          res.json(response.artist.shows)
+        })
+        
+        .catch((err) => handleError(err, res))
+  }
 
 function getShowsByName(req, res) {
     console.log("+++" + req.query)

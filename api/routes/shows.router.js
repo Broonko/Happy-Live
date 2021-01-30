@@ -3,6 +3,7 @@ const { authUser } = require('../utils')
 
 const {
   createShow,
+  getShowsByArtist,
   getShows,
   getShowsByName,
   getShowsByGenre
@@ -10,6 +11,7 @@ const {
 
 router
   .get('/', getShows)
+  .get('/name', getShowsByArtist)
   .get('/name', getShowsByName)
   .get('/type', getShowsByGenre)
 

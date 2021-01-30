@@ -14,7 +14,7 @@ const showSchema = new mongoose.Schema({
     },
     artist: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'users'
+        ref: 'user'
     },
     date: {
         type: String,

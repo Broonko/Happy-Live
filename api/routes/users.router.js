@@ -3,21 +3,21 @@ const { authUser } = require('../utils')
 
 const {
   getAllArtists,
+  getProfile,
   getUserById,
   updateUser,
   updateArtist,
-  getShowsByArtist,
   deleteUserById
 } = require('../controllers/users.controller')
 
 router
+.get('/me', authUser, getProfile)
+.get('/', getAllArtists)
   .get('/:id', authUser, getUserById)
-  .get('/', getAllArtists)
-  .get('/name', getShowsByArtist)
   .put('/me', authUser, updateUser)
   .put('/me/artist', authUser, updateArtist)
-  
-  
-  // .delete('/:id', deleteUserById)
+
+
+// .delete('/:id', deleteUserById)
 
 module.exports = router

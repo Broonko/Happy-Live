@@ -17,7 +17,7 @@ axios
 
         // })
     })
-    .catch(err => { alert('do not have permission') })
+    .catch(err => { alert('error home') })
 
 
 // document.getElementById('loginh').addEventListener('click', () => {

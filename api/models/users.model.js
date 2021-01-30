@@ -43,11 +43,11 @@ const userSchema = new mongoose.Schema({
     },
     shows:[{
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'shows'
+      ref: 'show'
     }],
     followers: [{
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'users'
+      ref: 'user'
     }]
   }
 })
