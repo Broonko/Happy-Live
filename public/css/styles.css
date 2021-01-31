@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
+
 body {
     margin: 100px;
 }
@@ -10,6 +12,12 @@ input {
 .beta {
     color: white;
     background-color: #2A2A48;
+}
+
+#happy {
+    height: 100%;
+    font-family: Piedra, cursive;
+    font-size: 50px;
 }
 
 .desvanecer:hover {

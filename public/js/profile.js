@@ -14,11 +14,19 @@ axios
         // <dd class="col-md-5">${response.data.name}</dd>` 
         // user.appendChild(newUser)
 
-        let user = document.getElementById('profileName')
+            // const userL = document.getElementById('userName')
+            // const newUserL = document.createElement('p')
+            // newUserL.innerHTML = response.data.name
+            // user.appendChild(newUserL)
+
+        let user = document.getElementById('profilePhoto')
+        user.setAttribute('src', `${response.data.photo}`)
+
+        user = document.getElementById('profileName')
         let newUser = document.createElement('dd')
         newUser.innerHTML = response.data.name
         user.appendChild(newUser)
-
+     
         user = document.getElementById('profileLocation')
         newUser = document.createElement('dd')
         newUser.innerHTML = response.data.location
@@ -56,7 +64,7 @@ axios
                 newUser.setAttribute('class', 'col')
                 newUser.innerHTML = `
                     <div class="card h-100">
-                        <img src="images/DavidGuetta.jpg" class="card-img-top" alt="...">
+                        <img src="${show.photo}" class="card-img-top" alt="...">
                         <div class="card-header border-success text-end"> <a href="#" class="btn btn-success">Buy ticket</a></div>
                             <div class="card-body">
                                 <p><h5 class="card-title">${show.name}</h5></p>

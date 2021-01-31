@@ -22,7 +22,8 @@ axios
         "social.youtube": document.getElementById('editYoutube').value,
         "social.facebook": document.getElementById('editFacebook').value,
         "social.twitter": document.getElementById('editTwitter').value,
-        "social.instagram": document.getElementById('editInstagram').value
+        "social.instagram": document.getElementById('editInstagram').value,
+        "photo": document.getElementById('editPhoto').value
     }, { headers: { token: localStorage.getItem('token') } })
     .then(response => {
         console.log(localStorage.name)

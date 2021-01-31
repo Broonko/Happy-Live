@@ -27,7 +27,8 @@ function createShow(req, res) {
                 place: req.body.place,
                 duration: req.body.duration,
                 price: req.body.price,
-                description: req.body.description
+                description: req.body.description,
+                photo: req.body.photo
             })
             .then(response => {
                 console.log("hola response")
@@ -56,8 +57,9 @@ function createShow(req, res) {
 
 function getShows(req, res) {
     console.log("*******")
+    console.log("***entra por aqui siempre***")
     ShowModel
-        .find()
+        .find(req.query)
         .then(response => {
             // console.log(response)
             res.json(response)
@@ -95,6 +97,6 @@ function getShowsByGenre(req, res) {
     console.log("***" + req.query.type)
     ShowModel
         .find(req.query)
-        .then(response => res.json(response[0].artist))
+        .then(response => res.json(response))
         .catch((err) => handleError(err, res))
 }

@@ -21,6 +21,13 @@ axios
             //y poner la ruta images/ en artist.photo
             //al picar en la foto ira al perfil del artista
             artists.appendChild(newArtist)
+
+            newArtist = document.createElement('a')
+            newArtist.setAttribute('href', `http://localhost:3000/profilePublic.html?id=${artist.id}`)
+            newArtist.innerHTML = `
+            <img src="${artist.photo}" title="${artist.name}" class="img-fluid rounded p-3 d-inline-block desvanecer" alt="...">
+            ` 
+            artists.appendChild(newArtist)
            
         })
     })

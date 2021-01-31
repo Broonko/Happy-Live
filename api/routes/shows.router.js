@@ -10,10 +10,10 @@ const {
 } = require('../controllers/shows.controller')
 
 router
+  .get('/type', getShowsByGenre)
   .get('/', getShows)
   .get('/name', getShowsByArtist)
   .get('/name', getShowsByName)
-  .get('/type', getShowsByGenre)
 
   .post('/', authUser, createShow)
 

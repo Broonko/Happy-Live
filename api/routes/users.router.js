@@ -11,8 +11,8 @@ const {
 } = require('../controllers/users.controller')
 
 router
-.get('/me', authUser, getProfile)
-.get('/', getAllArtists)
+  .get('/', getAllArtists)
+  .get('/me', authUser, getProfile)
   .get('/:id', authUser, getUserById)
   .put('/me', authUser, updateUser)
   .put('/me/artist', authUser, updateArtist)

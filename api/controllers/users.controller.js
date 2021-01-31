@@ -23,7 +23,9 @@ function getAllArtists(req, res) {
           console.log(elem._id)
           result.push({
             name: elem.name,
-            id: elem._id})
+            id: elem._id,
+            photo: elem.photo
+          })
         }
       })
       res.send(result)
