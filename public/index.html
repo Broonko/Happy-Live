@@ -14,23 +14,21 @@
 </head>
 
 <body>
-
     <div class="container-fluid">
-
         <header class="d-flex beta">
-            <div class="p-2 flex-grow-1 ">
-                <a class=" beta" href="http://localhost:3000/index.html">
+            <div class="p-2 flex-grow-1">
+                <a class="beta" href="http://localhost:3000/index.html">
                     <img src="images/Logo.gif" alt="Logo" width="100" height="100" class="mb-1">
                     <p id="happy" class="d-inline-block mt-4">Happy Live</p>
                 </a>
             </div>
             <div class="cp-2" href="">
                 <!-- <button type="submit" class="button mt-4" id="logout">LOGOUT</button> -->
-                <button type="submit" class="btn mt-5" id="loginh">Login</button>
+                <button type="submit" class="btn mt-5" id="loginh">Off line</button>
             </div>
             <div class="p-2">
                 <a id="userName" class="nav-link" href="http://localhost:3000/profile.html">
-                    <img class="my-1 ms-2" src="images/user.png" alt="UserImagen" width="75">
+                    <img class="mt-1 ms-1" src="images/user.png" alt="UserImagen" width="55">
                 </a>
             </div>
         </header>
@@ -57,9 +55,9 @@
         </nav>
 
         <div class="input-group">
-            <input class="form-control " placeholder="Input name, type of show or artist name to search...">
+            <input class="form-control my-3" placeholder="Input name, type of show or artist name to search...">
             <!-- <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button> -->
-            <div class="mt-2">
+            <div class="my-3">
                 <button type="submit" class="btn btn-warning">Search</button>
             </div>
         </div>
@@ -73,6 +71,16 @@
             </figcaption>
         </figure>
         <br>
+        <!-- 
+        <div class="card bg-dark text-white">
+            <img src="..." class="card-img" alt="...">
+            <div class="card-img-overlay">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                <p class="card-text">Last updated 3 mins ago</p>
+            </div>
+        </div> -->
 
         <section>
             <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -83,17 +91,30 @@
                     <li data-bs-target="#carouselIndicators" data-bs-slide-to="3"></li>
                 </ol>
                 <div class="carousel-inner">
-                    <div class="carousel-item" data-bs-interval="5000">
-                        <img src="images/arianasing.jpg" class="d-block w-100" alt="Ariana">
-                    </div>
                     <div class="carousel-item active" data-bs-interval="5000">
                         <img src="images/rosalia.jpg" class="d-block w-100" alt="Rosalia">
+                        <div class="card-img-overlay m-5 text-white">
+                            <h1 class="card-title">Rosalía at home</h1>
+                            <h5 class="card-text">Enjoy a great night from your home</h5>
+                            <h3 class="card-text">28 FEBRUARY 8:00 p.m. GMT</h3>
+                        </div>
                     </div>
+
                     <div class="carousel-item" data-bs-interval="5000">
                         <img src="images/vetusta.jpg" class="d-block w-100" alt="Vetusta">
+                        <div class="card-img-overlay m-5 text-white text-center">
+                            <h1 class="card-title">Vetusta Morla in concert</h1>
+                            <h5 class="card-text">Tour 2021</h5>
+                            <h3 class="card-text">07 MARCH 9:00 p.m. GMT</h3>
+                        </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
                         <img src="images/zahara.jpg" class="d-block w-100" alt="Zahara">
+                        <div class="card-img-overlay m-5 text-white text-center">
+                            <h1 class="card-title">Zahara in concert</h1>
+                            <h5 class="card-text">Gran Canaria Stadium</h5>
+                            <h3 class="card-text">16 MARCH 10:00 p.m. GMT</h3>
+                        </div>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-bs-slide="prev">
@@ -112,13 +133,6 @@
 
     <!-- <button id="logout">LOGOUT</button><br><br> -->
 
-    <!-- <ul id="artistList">
-        <h3>Artist List</h3>
-
-    </ul> -->
-    <!-- <ul id="showList">
-        <h3>Show List</h3>
-    </ul> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>

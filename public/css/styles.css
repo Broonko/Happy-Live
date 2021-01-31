@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dr+Sugiyama&family=Permanent+Marker&family=Piedra&display=swap');
 
 body {
     margin: 100px;
 }
 
-input {
+/* input {
     display: block;
     margin: 10px 0px;
-}
+} */
 
 .beta {
     color: white;
@@ -16,8 +16,8 @@ input {
 
 #happy {
     height: 100%;
-    font-family: Piedra, cursive;
-    font-size: 50px;
+    font-family: Permanent Marker, cursive;
+    font-size: 40px;
 }
 
 .desvanecer:hover {

@@ -10,7 +10,6 @@
 // })
 // .catch(err => { alert('error indexshows') })
 
-
 axios
     .get('http://localhost:3000/api/users', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
@@ -25,16 +24,16 @@ axios
             user.appendChild(newUser)
 
             let login = document.getElementById('loginh')
-            login.innerHTML = "Logout"
-            login.setAttribute('class', 'btn mt-5 btn-danger') 
+            login.innerHTML = "On air"
+            login.setAttribute('class', 'btn mt-5 btn-danger btn-sm') 
             login.setAttribute('id', 'Logout')
+
         } else {
 
             let login = document.getElementById('loginh')
-            login.innerHTML = "Login"
-            login.setAttribute('class', 'btn mt-5 btn-success') 
+            login.innerHTML = "Off line"
+            login.setAttribute('class', 'btn mt-5 btn-success btn-sm') 
             login.setAttribute('id', 'Loginh')
-
 
         }
 
@@ -55,8 +54,7 @@ axios
 // })
 
 document.getElementById('loginh').addEventListener('click', () => {
-    // localStorage.clear()
-   
+    localStorage.clear()
     window.location = "http://localhost:3000/login.html"
 })
 // document.getElementById('logout').addEventListener('click', () => {
