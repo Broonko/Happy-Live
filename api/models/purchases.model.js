@@ -6,13 +6,12 @@ const purchaseSchema = new mongoose.Schema({
         ref: 'user'
     },
     show: {
-
         type: mongoose.Schema.Types.ObjectId,
         ref: 'show'
     },
     date: {
         type: Date,
-        default: Date.now() // Get a timestamp :)
+        default: Date.now()
     }
 })
 

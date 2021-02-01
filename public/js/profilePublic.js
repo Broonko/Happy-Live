@@ -1,5 +1,4 @@
 var urlParams = new URLSearchParams(window.location.search);
-console.log(urlParams.get('id'))
 let idprofilePublic = urlParams.get('id')
 
 axios
@@ -44,27 +43,38 @@ axios
         newUser.innerHTML = response.data.artist.bio
         user.appendChild(newUser)
 
-        response.data.artist.shows.forEach(show => {
-            console.log(show.name)
+        response.data.artist.shows.forEach((show, i) => {
             user = document.getElementById('profileShows')
             newUser = document.createElement('div')
             newUser.setAttribute('class', 'col')
             newUser.innerHTML = `
                 <div class="card h-100">
                     <img src="images/DavidGuetta.jpg" class="card-img-top" alt="...">
-                    <div class="card-header border-success text-end"> <a href="#" class="btn btn-success">Buy ticket</a></div>
+                    <div class="card-header border-success text-end"> <button id="buyTicket${i}" class="btn btn-success">Buy ticket</button></div>
                         <div class="card-body">
                             <p><h5 class="card-title">${show.name}</h5></p>
+                            <p class="card-text">${show.date}</p>
                             <p class="card-text">Place: ${show.place}</p>
-                            <p id="showDuration">Duration: ${show.duration}&emsp;&ensp;Price: ${show.price} eur</dt>
+                            <p id="showDuration">Duration: ${show.duration} min&emsp;&ensp;Price: ${show.price} eur</dt>
                             <p id="showDescription"> ${show.description}</p>
                         </div>
                     </div>
                 </div>
                 `
             user.appendChild(newUser)
+            document.getElementById(`buyTicket${i}`).addEventListener('click', () => {
+                    console.log("hola" + show._id)
+                // axios ??????????????????????
+                    .post('http://localhost:3000/api/purchases', {
+                        "show": show._id
+                    }, { headers: { token: localStorage.getItem('token') } })
+                    .then(response => {
+                        response.json(response)
+                    })
+                    .catch(err => { alert('error buy ticket') })
+            })
         })
+        //     response.data.artist.shows.forEach((show, i) => {
+        // })
     })
     .catch(err => { alert('error profile') })
-
-

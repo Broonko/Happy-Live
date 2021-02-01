@@ -30,6 +30,7 @@ function createShow(req, res) {
                 description: req.body.description,
                 photo: req.body.photo
             })
+            .polulate('user')
             .then(response => {
                 console.log("hola response")
                 console.log("////" + res.locals.userId)
@@ -72,11 +73,27 @@ function getShows(req, res) {
         .catch((err) => handleError(err, res))
 }
 
+function getShowsByGenre(req, res) {
+    console.log("***" + req.query.type)
+    ShowModel
+        .find({ type: req.params.type })
+        .then(response => res.json(response))
+        .catch((err) => handleError(err, res))
+}
+
+function getShowsByName(req, res) {
+    console.log("+++" + req.query)
+    ShowModel
+        .find({ name: req.params.name })
+        .then(response => res.json(response))
+        .catch((err) => handleError(err, res))
+}
+
 function getShowsByArtist(req, res) {
 
-    console.log(req.query.name)
-    UserModel
-        .findOne(req.query)
+    console.log(req.params.name)
+    ShowModel
+        .find({ "artist.name": req.params.name })
         .then(response => {
           console.log(response.artist.shows)
           res.json(response.artist.shows)
@@ -85,18 +102,6 @@ function getShowsByArtist(req, res) {
         .catch((err) => handleError(err, res))
   }
 
-function getShowsByName(req, res) {
-    console.log("+++" + req.query)
-    ShowModel
-        .find(req.query)
-        .then(response => res.json(response[0].artist))
-        .catch((err) => handleError(err, res))
-}
 
-function getShowsByGenre(req, res) {
-    console.log("***" + req.query.type)
-    ShowModel
-        .find(req.query)
-        .then(response => res.json(response))
-        .catch((err) => handleError(err, res))
-}
+
+

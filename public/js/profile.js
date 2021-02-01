@@ -2,6 +2,35 @@
 // let idArtist = urlParams.get('id') 
 
 axios
+    .get('http://localhost:3000/api/purchases', { headers: { token: localStorage.getItem('token') } })
+    .then(response => {
+        
+        response.data.forEach(purchase => {
+            console.log(purchase.show)
+            let buy = document.getElementById('profilePurchases')
+            let newBuy = document.createElement('div')
+            newBuy.setAttribute('class', 'col')
+            newBuy.innerHTML = `
+                <div class="card h-100">
+                    <img src="${purchase.show.photo}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p><h5 class="card-title">${purchase.show.name}</h5></p>
+                            <p class="card-text">${purchase.show.date}</p>
+                            <p class="card-text">Place: ${purchase.show.place}</p>
+                            <p id="showDuration">Duration: ${purchase.show.duration} min&emsp;&ensp;Price: ${purchase.show.price} eur</dt>
+                            <p id="showDescription"> ${purchase.show.description}</p>
+                        </div>
+                    </div>
+                </div>
+              `
+            buy.appendChild(newBuy)
+        })
+    })
+    .catch(err => { alert('error profilePurchases') })
+
+
+
+axios
     .get('http://localhost:3000/api/users/me', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
         // console.log(localStorage.name)
@@ -14,10 +43,10 @@ axios
         // <dd class="col-md-5">${response.data.name}</dd>` 
         // user.appendChild(newUser)
 
-            // const userL = document.getElementById('userName')
-            // const newUserL = document.createElement('p')
-            // newUserL.innerHTML = response.data.name
-            // user.appendChild(newUserL)
+        // const userL = document.getElementById('userName')
+        // const newUserL = document.createElement('p')
+        // newUserL.innerHTML = response.data.name
+        // user.appendChild(newUserL)
 
         let user = document.getElementById('profilePhoto')
         user.setAttribute('src', `${response.data.photo}`)
@@ -26,7 +55,7 @@ axios
         let newUser = document.createElement('dd')
         newUser.innerHTML = response.data.name
         user.appendChild(newUser)
-     
+
         user = document.getElementById('profileLocation')
         newUser = document.createElement('dd')
         newUser.innerHTML = response.data.location
@@ -58,7 +87,6 @@ axios
             user.appendChild(newUser)
 
             response.data.artist.shows.forEach(show => {
-                console.log(show)
                 user = document.getElementById('profileShows')
                 newUser = document.createElement('div')
                 newUser.setAttribute('class', 'col')
@@ -68,8 +96,9 @@ axios
                         <div class="card-header border-success text-end"> <a href="#" class="btn btn-success">Buy ticket</a></div>
                             <div class="card-body">
                                 <p><h5 class="card-title">${show.name}</h5></p>
+                                <p class="card-text">${show.date}</p>
                                 <p class="card-text">Place: ${show.place}</p>
-                                <p id="showDuration">Duration: ${show.duration}&emsp;&ensp;Price: ${show.price} eur</dt>
+                                <p id="showDuration">Duration: ${show.duration} min&emsp;&ensp;Price: ${show.price} eur</dt>
                                 <p id="showDescription"> ${show.description}</p>
                             </div>
                         </div>
@@ -77,7 +106,6 @@ axios
                   `
                 user.appendChild(newUser)
             })
-
         }
     })
     .catch(err => { alert('error profile') })

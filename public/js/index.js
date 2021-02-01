@@ -25,14 +25,14 @@ axios
 
             let login = document.getElementById('loginh')
             login.innerHTML = "On air"
-            login.setAttribute('class', 'btn mt-5 btn-danger btn-sm') 
+            login.setAttribute('class', 'btn mt-5 btn-danger btn-sm')
             login.setAttribute('id', 'Logout')
 
         } else {
 
             let login = document.getElementById('loginh')
             login.innerHTML = "Off line"
-            login.setAttribute('class', 'btn mt-5 btn-success btn-sm') 
+            login.setAttribute('class', 'btn mt-5 btn-success btn-sm')
             login.setAttribute('id', 'Loginh')
 
         }
@@ -54,17 +54,11 @@ axios
 // })
 
 document.getElementById('loginh').addEventListener('click', () => {
-    localStorage.clear()
-    window.location = "http://localhost:3000/login.html"
+
+    if (localStorage.name) {
+        localStorage.clear()
+        window.location.reload()
+    } else {
+        window.location = "http://localhost:3000/login.html"
+    }
 })
-// document.getElementById('logout').addEventListener('click', () => {
-//     localStorage.clear()
-//     window.location.reload()
-// })
-
-
-
-
-// function goShows() {
-//     window.location = "http://localhost:3000/shows.html"
-// }

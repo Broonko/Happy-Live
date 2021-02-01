@@ -19,6 +19,7 @@ axios
                         <div class="card-header border-success text-end"> <a href="#" class="btn btn-success">Buy ticket</a></div>
                             <div class="card-body">
                                 <p><h5 class="card-title">${show.name}</h5></p>
+                                <p class="card-text">${show.date}</p>
                                 <p class="card-text">Place: ${show.place}</p>
                                 <p id="showDuration">Duration: ${show.duration}&emsp;&ensp;Price: ${show.price} eur</dt>
                                 <p id="showDescription"> ${show.description}</p>
