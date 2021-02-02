@@ -5,7 +5,7 @@ axios
     .get('http://localhost:3000/api/purchases', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
         
-        response.data.forEach(purchase => {
+        response.data.forEach((purchase, i) => {
             console.log(purchase.show)
             let buy = document.getElementById('profilePurchases')
             let newBuy = document.createElement('div')
@@ -14,6 +14,7 @@ axios
                 <div class="card h-100">
                     <img src="${purchase.show.photo}" class="card-img-top" alt="...">
                         <div class="card-body">
+                        <div class="card-header border-danger text-end"> <a href="http://localhost:3000/showLive${i}.html" class="btn btn-danger">Watch show</a></div>
                             <p><h5 class="card-title">${purchase.show.name}</h5></p>
                             <p class="card-text">${purchase.show.date}</p>
                             <p class="card-text">Place: ${purchase.show.place}</p>
@@ -63,7 +64,8 @@ axios
 
         user = document.getElementById('profileBalance')
         newUser = document.createElement('dd')
-        newUser.innerHTML = response.data.balance
+        newUser.setAttribute('class', 'd-flex justify-content-center')
+        newUser.innerHTML = `${response.data.balance}&ensp;<div class="d-flex"><img src="images/star.png"/></div>`
         user.appendChild(newUser)
 
         if (response.data.artist.genre) {

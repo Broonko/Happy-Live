@@ -62,9 +62,15 @@ axios
                 </div>
                 `
             user.appendChild(newUser)
-            document.getElementById(`buyTicket${i}`).addEventListener('click', () => {
+
+            var ticket = document.getElementById(`buyTicket${i}`)
+            ticket.addEventListener('click', () => {
                     console.log("hola" + show._id)
-                // axios ??????????????????????
+                    ticket.innerHTML = ('Purchased')
+                    ticket.setAttribute('class', 'btn btn-danger')
+                    // ticket.setAttribute('id', `purchased${i}`)
+
+                axios 
                     .post('http://localhost:3000/api/purchases', {
                         "show": show._id
                     }, { headers: { token: localStorage.getItem('token') } })

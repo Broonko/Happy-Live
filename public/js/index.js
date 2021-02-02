@@ -24,14 +24,14 @@ axios
             user.appendChild(newUser)
 
             let login = document.getElementById('loginh')
-            login.innerHTML = "On air"
+            login.innerHTML = "Logout"
             login.setAttribute('class', 'btn mt-5 btn-danger btn-sm')
             login.setAttribute('id', 'Logout')
 
         } else {
 
             let login = document.getElementById('loginh')
-            login.innerHTML = "Off line"
+            login.innerHTML = "Login"
             login.setAttribute('class', 'btn mt-5 btn-success btn-sm')
             login.setAttribute('id', 'Loginh')
 

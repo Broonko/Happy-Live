@@ -13,27 +13,29 @@
     <!-- <script src="js/protect.js"></script> -->
 </head>
 
-<body>
+<body style="background-color: #f3f3f3;">
     <div class="container-fluid">
         <header class="d-flex beta">
             <div class="p-2 flex-grow-1">
-                <a class="beta" href="http://localhost:3000/index.html">
-                    <img src="images/Logo.gif" alt="Logo" width="100" height="100" class="mb-1">
+                <div class="d-inline-block" href="http://localhost:3000/index.html">
+                    <img src="images/Logo.gif" alt="Logo" width="100" height="100"
+                        class="d-inline-block rounded-circle align-center mb-2">
+                </div>
                     <p id="happy" class="d-inline-block mt-4">Happy Live</p>
-                </a>
             </div>
             <div class="cp-2" href="">
                 <!-- <button type="submit" class="button mt-4" id="logout">LOGOUT</button> -->
-                <button type="submit" class="btn mt-5" id="loginh">Off line</button>
+                <button type="submit" class="btn mt-5" id="loginh">Login</button>
             </div>
             <div class="p-2">
-                <a id="userName" class="nav-link" href="http://localhost:3000/profile.html">
-                    <img class="mt-1 ms-1" src="images/user.png" alt="UserImagen" width="55">
+                <a id="userName" class="nav-link d-none d-md-block" href="http://localhost:3000/profile.html">
+                    <img class="d-none d-sm-block mt-1 ms-1" src="images/user.png" alt="UserImagen" width="55">
                 </a>
             </div>
         </header>
-
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <!-- #dfdede -->
+        <nav class="navbar navbar-expand-sm navbar-light" style="background-image: linear-gradient(120deg, #dfdede, #f3f3f3);
+        ">
             <div class="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -82,7 +84,7 @@
             </div>
         </div> -->
 
-        <section>
+        <section class="">
             <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active"></li>
@@ -93,7 +95,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="5000">
                         <img src="images/rosalia.jpg" class="d-block w-100" alt="Rosalia">
-                        <div class="card-img-overlay m-5 text-white">
+                        <div class="card-img-overlay m-5 text-white align-bottom">
                             <h1 class="card-title">Rosalía at home</h1>
                             <h5 class="card-text">Enjoy a great night from your home</h5>
                             <h3 class="card-text">28 FEBRUARY 8:00 p.m. GMT</h3>
