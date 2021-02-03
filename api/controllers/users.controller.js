@@ -13,22 +13,28 @@ module.exports = {
 }
 
 function getAllArtists(req, res) {
+  console.log(req.query)
   UserModel
-    .find()
+    .find(req.query)
+    .populate({
+      path: 'artist.shows',
+      'model': 'show'
+    })
     .then(response => {
-      let result = []
-      response.forEach(elem => {
-        if (elem.artist.genre) {
-          console.log(elem.name)
-          console.log(elem._id)
-          result.push({
-            name: elem.name,
-            id: elem._id,
-            photo: elem.photo
-          })
-        }
-      })
-      res.send(result)
+      res.json(response)
+      // let result = []
+      // response.forEach(elem => {
+      //   if (elem.artist.genre) {
+      //     console.log(elem.name)
+      //     console.log(elem._id)
+      //     result.push({
+      //       name: elem.name,
+      //       id: elem._id,
+      //       photo: elem.photo
+      //     })
+      //   }
+      // })
+      // res.send(result)
     })
     .catch((err) => handleError(err, res))
 }

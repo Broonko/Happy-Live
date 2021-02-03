@@ -10,7 +10,7 @@
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <title>Home</title>
-    <!-- <script src="js/protect.js"></script> -->
+
 </head>
 
 <body style="background-color: #f3f3f3;">
@@ -21,11 +21,11 @@
                     <img src="images/Logo.gif" alt="Logo" width="100" height="100"
                         class="d-inline-block rounded-circle align-center mb-2">
                 </div>
-                    <p id="happy" class="d-inline-block mt-4">Happy Live</p>
+                <p id="happy" class="d-inline-block mt-4">Happy Live</p>
             </div>
             <div class="cp-2" href="">
                 <!-- <button type="submit" class="button mt-4" id="logout">LOGOUT</button> -->
-                <button type="submit" class="btn mt-5" id="loginh">Login</button>
+                <button type="submit" class="btn rounded-pill mt-5" id="loginh">Login</button>
             </div>
             <div class="p-2">
                 <a id="userName" class="nav-link d-none d-md-block" href="http://localhost:3000/profile.html">
@@ -34,8 +34,8 @@
             </div>
         </header>
         <!-- #dfdede -->
-        <nav class="navbar navbar-expand-sm navbar-light" style="background-image: linear-gradient(120deg, #dfdede, #f3f3f3);
-        ">
+        <nav class="navbar navbar-expand-sm navbar-light"
+            style="background-image: linear-gradient(120deg, #dfdede, #f3f3f3);">
             <div class="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -44,23 +44,23 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="http://localhost:3000/index.html">Home</a>
                         <a class="nav-link navMusic" href="http://localhost:3000/shows.html?type=music">Music</a>
                         <a class="nav-link navComedy" href="http://localhost:3000/shows.html?type=comedy">Comedy</a>
                         <a class="nav-link navKids" href="http://localhost:3000/shows.html?type=kids">Kids</a>
-                        <a class="nav-link" href="http://localhost:3000/artists.html">Artists</a>
-                        <a class="nav-link" href="http://localhost:3000/profile.html">Profile</a>
-                        <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+                        <a class="nav-link navArtists" href="http://localhost:3000/artists.html">Artists</a>
+                        <a class="nav-link navProfile" href="http://localhost:3000/profile.html">Profile</a>
                     </div>
                 </div>
             </div>
         </nav>
 
         <div class="input-group">
-            <input class="form-control my-3" placeholder="Input name, type of show or artist name to search...">
+            <input id="searchShow" class="form-control my-3"
+                placeholder="Input name, type of show or artist name to search...">
             <!-- <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button> -->
             <div class="my-3">
-                <button type="submit" class="btn btn-warning">Search</button>
+                <button type="submit" id="searchButton" class="btn btn-warning">Search</button>
             </div>
         </div>
         <figure class="text-center">
@@ -68,8 +68,7 @@
                 <h3>Welcome to HAPPY LIVE</h3>
             </blockquote>
             <figcaption class="blockquote-footer">
-                your unique show
-                <!-- <cite title="Source Title">Source Title</cite> -->
+                <cite title="Slogan"> your unique show</cite>
             </figcaption>
         </figure>
         <br>

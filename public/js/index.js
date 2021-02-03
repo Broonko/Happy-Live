@@ -1,49 +1,29 @@
-// http://localhost:3000/shows.html?type=${artist.id}
+window.onload = () => {
+    let login = document.getElementById('loginh')
+    if (localStorage.name !== undefined) {
 
-// axios
-// .get('http://localhost:3000/api/shows', { headers: { token: localStorage.getItem('token') } })
-// .then(response => {
-//     console.log(response.data)
+        const user = document.getElementById('userName')
+        const newUser = document.createElement('p')
+        newUser.innerHTML = localStorage.name
+        user.appendChild(newUser)
 
-//     // let shows = document.getElementById('navMusic')
-//     // shows.setAttribute('href', `http://localhost:3000/shows.html?type=${artist.id}`)
-// })
-// .catch(err => { alert('error indexshows') })
+        login.innerHTML = "Logout"
+        login.setAttribute('class', 'btn rounded-pill mt-5 btn-danger btn-sm')
+        login.setAttribute('id', 'Logout')
+
+    } else {
+
+        login.innerHTML = "Login"
+        login.setAttribute('class', 'btn rounded-pill mt-5 btn-success btn-sm')
+        login.setAttribute('id', 'Loginh')
+    }
+}
 
 axios
     .get('http://localhost:3000/api/users', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
         console.log(response.data)
 
-        if (localStorage.name !== undefined) {
-            console.log(localStorage.name)
-
-            const user = document.getElementById('userName')
-            const newUser = document.createElement('p')
-            newUser.innerHTML = localStorage.name
-            user.appendChild(newUser)
-
-            let login = document.getElementById('loginh')
-            login.innerHTML = "Logout"
-            login.setAttribute('class', 'btn mt-5 btn-danger btn-sm')
-            login.setAttribute('id', 'Logout')
-
-        } else {
-
-            let login = document.getElementById('loginh')
-            login.innerHTML = "Login"
-            login.setAttribute('class', 'btn mt-5 btn-success btn-sm')
-            login.setAttribute('id', 'Loginh')
-
-        }
-
-        // const artists = document.getElementById('artistList')
-        // response.data.forEach(artist => {
-        //     const newArtist = document.createElement('li')
-        //     newArtist.innerHTML = artist
-        //     artists.appendChild(newArtist)
-
-        // })
     })
     .catch(err => { alert('error home') })
 
@@ -62,3 +42,23 @@ document.getElementById('loginh').addEventListener('click', () => {
         window.location = "http://localhost:3000/login.html"
     }
 })
+
+document.getElementById('searchButton').addEventListener('click', () => {
+
+    console.log('entra')
+    let search = document.getElementById('searchShow').value
+    console.log(search)
+
+    if (search === 'music') {
+        window.location = "http://localhost:3000/shows.html?type=music"
+    }
+    if (search === 'comedy') {
+        window.location = "http://localhost:3000/shows.html?type=comedy"
+    }
+    if (search === 'kids') {
+        window.location = "http://localhost:3000/shows.html?type=kids"
+    } else {
+        window.location = `http://localhost:3000/shows.html?name=${search}`
+    }
+})
+

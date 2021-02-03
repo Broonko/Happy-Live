@@ -30,7 +30,7 @@ function createShow(req, res) {
                 description: req.body.description,
                 photo: req.body.photo
             })
-            .polulate('user')
+            .populate('user')
             .then(response => {
                 console.log("hola response")
                 console.log("////" + res.locals.userId)
@@ -94,6 +94,7 @@ function getShowsByArtist(req, res) {
     console.log(req.params.name)
     ShowModel
         .find({ "artist.name": req.params.name })
+        // .populate('artist')
         .then(response => {
           console.log(response.artist.shows)
           res.json(response.artist.shows)

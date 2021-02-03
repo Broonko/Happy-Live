@@ -13,7 +13,7 @@ router
   .get('/', getShows)
   .get('/type/:type', getShowsByGenre)
   .get('/name/:name', getShowsByName)
-  .get('/artist.name/:artist', getShowsByArtist)
+  .get('/artist.name/:name', getShowsByArtist)
 
   .post('/', authUser, createShow)
 

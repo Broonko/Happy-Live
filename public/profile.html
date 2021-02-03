@@ -23,8 +23,8 @@
                 <a class="" href="http://localhost:3000/index.html">
                     <img src="images/Logo.gif" alt="Logo" width="100" height="100"
                         class="d-inline-block rounded-circle align-center my-2">
-                    </a>
-                    <p id="happy" class="d-inline-block mt-3">Happy Live</p>
+                </a>
+                <p id="happy" class="d-inline-block mt-3">Happy Live</p>
             </div>
             <div class="cp-2" href="">
                 <button type="submit" class="button mt-5" id="loginh">LOGIN</button>
@@ -35,6 +35,27 @@
                 </a>
             </div>
         </header>
+
+        <nav class="navbar navbar-expand-sm navbar-light"
+            style="background-image: linear-gradient(120deg, #dfdede, #f3f3f3);">
+            <div class="">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" aria-current="page" href="http://localhost:3000/index.html">Home</a>
+                        <a class="nav-link navMusic" href="http://localhost:3000/shows.html?type=music">Music</a>
+                        <a class="nav-link navComedy" href="http://localhost:3000/shows.html?type=comedy">Comedy</a>
+                        <a class="nav-link navKids" href="http://localhost:3000/shows.html?type=kids">Kids</a>
+                        <a class="nav-link navArtists" href="http://localhost:3000/artists.html">Artists</a>
+                        <a class="nav-link navProfile active" href="http://localhost:3000/profile.html">Profile</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
         <div class="row d-flex bd-highlight">
             <div class="d-flex justify-content-around">
@@ -62,9 +83,9 @@
                     <br>
                     <dt id="profileBalance" class="">
                         <h4>Balance</h4>
-                        
+
                     </dt>
-                    
+
 
                 </div>
                 <div class="col text-center">
@@ -86,27 +107,27 @@
                 </small>
             </p>
         </div>
-    </div>
-    <!-- 
-    <div>
-        <dt class="col-sm-3">Description lists</dt>
-        <dd class="col-sm-9">A description </dd>
-    </div>
+        <!-- 
+            <div>
+                <dt class="col-sm-3">Description lists</dt>
+                <dd class="col-sm-9">A description </dd>
+            </div>
+            
+            <dl class="row">
+                <dt class="col-sm-3">Description lists</dt>
+                <dd class="col-sm-9">A description list .</dd>
+            </dl> -->
+        <h1>Purchases</h1>
+        <div id="profilePurchases" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- // Aqui se muestran los shows comprados por un user-->
+        </div>
 
-    <dl class="row">
-        <dt class="col-sm-3">Description lists</dt>
-        <dd class="col-sm-9">A description list .</dd>
-    </dl> -->
-    <h1>Purchases</h1>
-    <div id="profilePurchases" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <!-- // Aqui se muestran los shows comprados por un user-->
-    </div>
+        <h1>Shows</h1>
+        <div id="profileShows" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- //Aqui se muestran los shows creados en un profile de artista -->
+        </div>
 
-    <h1>Shows</h1>
-    <div id="profileShows" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <!-- //Aqui se muestran los shows creados en un profile de artista -->
     </div>
-
     <ul class="list-inline">
         <li class="list-inline-item">Lorem ipsum</li>
         <li class="list-inline-item">Phasellus iaculis</li>

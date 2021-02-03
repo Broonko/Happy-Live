@@ -25,7 +25,7 @@
     </style> -->
 </head>
 
-<body style="background-color: #f3f3f3;">
+<body>
     <div class="container-fluid">
 
         <header class="d-flex beta">
@@ -47,7 +47,8 @@
             </div>
         </header>
 
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <nav class="navbar navbar-expand-sm navbar-light"
+            style="background-image: linear-gradient(120deg, #dfdede, #f3f3f3);">
             <div class="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -56,13 +57,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
-                        <a class="nav-link" href="http://localhost:3000/shows.html">Musica</a>
-                        <a class="nav-link" href="#">Humor</a>
-                        <a class="nav-link" href="#">Infantil</a>
-                        <a class="nav-link  active" href="http://localhost:3000/artists.html">Artistas</a>
-                        <a class="nav-link" href="http://localhost:3000/profile.html">Perfil</a>
-                        <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+                        <a class="nav-link" aria-current="page" href="http://localhost:3000/index.html">Home</a>
+                        <a class="nav-link navMusic" href="http://localhost:3000/shows.html?type=music">Music</a>
+                        <a class="nav-link navComedy" href="http://localhost:3000/shows.html?type=comedy">Comedy</a>
+                        <a class="nav-link navKids" href="http://localhost:3000/shows.html?type=kids">Kids</a>
+                        <a class="nav-link navArtists active" href="http://localhost:3000/artists.html">Artists</a>
+                        <a class="nav-link navProfile" href="http://localhost:3000/profile.html">Profile</a>
                     </div>
                 </div>
             </div>
@@ -74,18 +74,13 @@
                 <div class="d-flex justify-content-around">
                     <div class="p-2 bd-highlight">
                         <h1>ARTISTS</h1>
-                        <ul id="artistList">
-                            <h3>Artists List</h3>
-                        </ul>
                     </div>
                 </div>
             </div>
             <div class="container-fluid">
                 <div id="artistsPhotos">
 
-                    <!-- users/60106da35462c24e955a7c43 -->
-
-                    <img src="images/Marshmello.jpg" title="Marshmello"
+                    <!-- <img src="images/Marshmello.jpg" title="Marshmello"
                         class="img-fluid rounded p-3 d-inline-block desvanecer" alt="...">
 
                     <img src="images/FooFighters.jpg" title="FooFighters"
@@ -94,7 +89,7 @@
                         class="img-fluid rounded p-3 d-inline-block desvanecer" alt="...">
                     <img src="images/JBalvin.jpg" class="img-fluid rounded p-3 d-inline-block" alt="...">
                     <img src="images/PearlJam.jpg" class="img-fluid rounded p-3 d-inline-block" alt="...">
-                    <img src="images/RHCP.jpg" class="img-fluid rounded p-3 d-inline-block" alt="...">
+                    <img src="images/RHCP.jpg" class="img-fluid rounded p-3 d-inline-block" alt="..."> -->
                 </div>
             </div>
 

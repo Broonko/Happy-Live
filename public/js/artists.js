@@ -1,8 +1,8 @@
 axios
     .get('http://localhost:3000/api/users', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
-        console.log(response.data)
-        console.log(localStorage.name)
+        // console.log(response.data)
+        // console.log(localStorage.name)
         
         // const user = document.getElementById('userName')
         // const newUser = document.createElement('p')
@@ -11,7 +11,7 @@ axios
 
         const artists = document.getElementById('artistsPhotos')
         response.data.forEach(artist => {
-            // console.log(artist)
+            // console.log(artist._id)
             // console.log(`http://localhost:3000/profilePublic.html?id=${artist.id}`)
             // let newArtist = document.createElement('a')
             // newArtist.setAttribute('href', `http://localhost:3000/profilePublic.html?id=${artist.id}`)
@@ -22,12 +22,11 @@ axios
             // artists.appendChild(newArtist)
 
             newArtist = document.createElement('a')
-            newArtist.setAttribute('href', `http://localhost:3000/profilePublic.html?id=${artist.id}`)
+            newArtist.setAttribute('href', `http://localhost:3000/profilePublic.html?id=${artist._id}`)
             newArtist.innerHTML = `
             <img src="${artist.photo}" title="${artist.name}" class="img-fluid rounded p-3 d-inline-block desvanecer" alt="...">
             ` 
             artists.appendChild(newArtist)
-           
         })
     })
     .catch(err => { alert('do not have permission') })

@@ -12,6 +12,7 @@ const {
 
 router
   .get('/', getAllArtists)
+  // .get('/name')
   .get('/me', authUser, getProfile)
   .get('/:id', authUser, getUserById)
   .put('/me', authUser, updateUser)

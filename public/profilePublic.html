@@ -17,9 +17,10 @@
 <body>
     <div class="container-fluid">
         <header class="d-flex beta">
-            <div class="p-2 flex-grow-1 ">
+            <div class="p-2 flex-grow-1">
                 <a class="" href="http://localhost:3000/index.html">
-                    <img src="images/Logo.gif" alt="Logo" class="d-inline-block rounded-circle" width="100" height="100" >
+                    <img src="images/Logo.gif" alt="Logo" class="d-inline-block rounded-circle" width="100"
+                        height="100">
                     Happy Live
                 </a>
             </div>
@@ -33,11 +34,32 @@
             </div>
         </header>
 
+        <nav class="navbar navbar-expand-sm navbar-light"
+            style="background-image: linear-gradient(120deg, #dfdede, #f3f3f3);">
+            <div class="">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" aria-current="page" href="http://localhost:3000/index.html">Home</a>
+                        <a class="nav-link navMusic" href="http://localhost:3000/shows.html?type=music">Music</a>
+                        <a class="nav-link navComedy" href="http://localhost:3000/shows.html?type=comedy">Comedy</a>
+                        <a class="nav-link navKids" href="http://localhost:3000/shows.html?type=kids">Kids</a>
+                        <a class="nav-link navArtists" href="http://localhost:3000/artists.html">Artists</a>
+                        <a class="nav-link navProfile active" href="http://localhost:3000/profile.html">Profile</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
         <div class="row d-flex bd-highlight">
             <div class="d-flex justify-content-around">
                 <!-- <p><abbr href="http://localhost:3000/editProfile.html" title="HyperText Markup Language" class="initialism p-2 bd-highlight">HTML</abbr></p> -->
                 <!-- <a class="nav-link p-2 bd-highlight" href="http://localhost:3000/editProfile.html">Edit</a> -->
-                <div class="p-2 bd-highlight">
+                <div class="my-3 bd-highlight fs-1">
                     <h1>PROFILE</h1>
                 </div>
                 <!-- <a class="p-2 bd-highlight" href="http://localhost:3000/beArtist.html">Be an artist</a> -->
@@ -50,31 +72,31 @@
                     <img src="images/DavidGuetta.jpg" alt="...">
                 </div>
                 <div class="col-md-3">
-                    <dt id="profileName" class="col-md-2">
-                        <h4>Name</h4>
+                    <dt id="profileName" class="fs-5">
+                        Name
                     </dt>
                     <br>
-                    <dt id="profileLocation" class="col-md-2">
-                        <h4>Location</h4>
+                    <dt id="profileLocation" class="fs-5">
+                        Location
                     </dt>
                     <br>
-                    <dt id="profileBalance" class="col-md-2">
-                        <h4>Balance</h4>
+                    <dt id="profileBalance" class="fs-5">
+                        Balance
                     </dt>
                 </div>
                 <div class="col-md-4">
-                    <dt id="profileGenre" class="col-md-2">
-                        <h4>Genre</h4>
+                    <dt id="profileGenre" class="fs-5">
+                        Genre
                     </dt>
                     <br>
-                    <dt id="profileBio" class="col-md-2">
-                        <h4>Bio</h4>
+                    <dt id="profileBio" class="fs-5">
+                        Bio
                     </dt>
                 </div>
 
                 <p class="card-text">
                     <small>
-                        <dt class="text-highlight" id="artistOK">
+                        <dt class="text-highlight fs-4" id="artistOK">
                         </dt>
                     </small>
                 </p>
@@ -93,7 +115,7 @@
     </dl>
 
     <div id="profileShows" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-    <!-- // Aqui se muestran los shows disponibles para comprar de un artista -->
+        <!-- // Aqui se muestran los shows disponibles para comprar de un artista -->
 
     </div>
 
