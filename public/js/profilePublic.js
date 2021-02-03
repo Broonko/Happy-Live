@@ -11,12 +11,10 @@ axios
         // console.log(response.data)
         // console.log(response.data.artist.genre)
 
-        // let user = document.getElementById('profileName')
-        // let newUser = document.createElement().innerHTML = `
-        // <dd class="col-md-5">${response.data.name}</dd>` 
-        // user.appendChild(newUser)
+        let user = document.getElementById('profilePhoto')
+        user.setAttribute('src', `${response.data.photo}`)
 
-        let user = document.getElementById('profileName')
+        user = document.getElementById('profileName')
         let newUser = document.createElement('dd')
         newUser.setAttribute('class', 'fs-6 fw-normal')
         newUser.innerHTML = response.data.name
@@ -70,22 +68,47 @@ axios
 
             var ticket = document.getElementById(`buyTicket${i}`)
             ticket.addEventListener('click', () => {
-                    console.log("hola" + show._id)
-                    ticket.innerHTML = ('Purchased')
-                    ticket.setAttribute('class', 'btn btn-danger')
-                    // ticket.setAttribute('id', `purchased${i}`)
+                console.log("hola" + show._id)
+                console.log("holaa" + show.price)
+                console.log("holaaa" + localStorage._id)
+                var showPrice = show.price
 
-                axios 
-                    .post('http://localhost:3000/api/purchases', {
-                        "show": show._id
-                    }, { headers: { token: localStorage.getItem('token') } })
+                ticket.innerHTML = ('Purchased')
+                ticket.setAttribute('class', 'btn btn-danger')
+                // ticket.setAttribute('id', `purchased${i}`)
+
+                axios
+                    .get('http://localhost:3000/api/users/me', { headers: { token: localStorage.getItem('token') } })
                     .then(response => {
-                        // response.json(response)
+                        console.log(response.data.balance)
+                        console.log(showPrice)
+                        console.log(show._id)
+                        if (response.data.balance > showPrice) {
+
+                            var newBalance = (response.data.balance - showPrice)
+                            console.log(newBalance)
+                            console.log(show._id)
+                            axios
+                                .post('http://localhost:3000/api/purchases', {
+                                    "show": show._id
+                                }, { headers: { token: localStorage.getItem('token') } })
+                                .then(response => {
+                                    console.log("compra hecha")
+                                    axios
+                                        .put('http://localhost:3000/api/users/me', { balance: newBalance }, { headers: { token: localStorage.getItem('token') } })
+                                        .then(response => {
+                                            console.log(response.data.balance)
+                                            console.log("dinero descontado")
+                                            // window.location = "http://localhost:3000/profile.html"
+                                        })
+                                        .catch(err => { alert('error update deposit') })
+                                    // response.json(response)
+                                })
+                                .catch(err => { alert('no suficiente dinero') })
+                        } else { alert('Not enough money') }
                     })
                     .catch(err => { alert('error buy ticket') })
             })
         })
-        //     response.data.artist.shows.forEach((show, i) => {
-        // })
     })
     .catch(err => { alert('error profile') })

@@ -63,3 +63,5 @@ PUT	/:id_shows	authArtist	cancelShow		Cancela un show
 					
 PUT	users/:id_user??	authUser	recoverPasswd		Recover password
 
+THANXS TO
+<a href='https://www.freepik.com/vectors/logo'>Logo vector created by freepik - www.freepik.com</a>

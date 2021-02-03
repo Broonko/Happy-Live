@@ -70,8 +70,15 @@
         <div class="container-fluid">
             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 g-4 my-3">
                 <div class="col">
-                    <img id="profilePhoto" src="..." alt="...">
+                    <img id="profilePhoto" class="shadow-lg rounded" src="..." alt="...">
+                    <p class="card-text d-block">
+                        <small>
+                            <dt class="text-highlight" id="artistOK">
+                            </dt>
+                        </small>
+                    </p>
                 </div>
+              
                 <div class="col text-center">
                     <dt id="profileName" class="">
                         <h4>Name</h4>
@@ -83,10 +90,74 @@
                     <br>
                     <dt id="profileBalance" class="">
                         <h4>Balance</h4>
-
                     </dt>
 
+                    
+                    <!-- <button type="button" style="font-size: 14px;" id="deposit" class="btn btn-success">Deposit</button> -->
+                    <!-- <i class="bi bi-wallet2"></i> -->
 
+
+                    <!-- Button trigger modal -->
+                    <button type="button" style="font-size: 14px;" class="shadow btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Deposit
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Payment</h5>
+                                    <img class="ms-3" src="images/visa.png" alt="">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row g-3 ">
+                                        <!-- <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="John" autofocus><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"> -->
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" placeholder="First name"
+                                                aria-label="First name">
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" placeholder="Last name"
+                                                aria-label="Last name">
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="text" class="form-control" placeholder="Card number"
+                                                aria-label="Card number">
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="month" id="month" class="form-control"
+                                                placeholder="Month / Year">
+                                        </div>
+                                        <div class="col-2">
+                                            <input type="text" id="csv" class="form-control" maxlength="3" size="3"
+                                                placeholder="CSV">
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="number" id="amountDeposit" class="form-control" min="0"
+                                                max="100" step="10" placeholder="Amount">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" id="buttonDeposit" class="btn btn-success">Deposit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
                 </div>
                 <div class="col text-center">
                     <dt id="profileGenre" class="">
@@ -96,17 +167,20 @@
                     <dt id="profileBio" class="">
                         <h4>Bio</h4>
                     </dt>
-
+                    <br>
+                    <img src="images/web.png" alt="">
+                    <img src="images/youtube.png" alt="">
+                    <img src="images/facebook.png" alt="">
+                    <img src="images/twitter.png" alt="">
+                    <img src="images/instagram.png" alt="">
                 </div>
-
+                
             </div>
-            <p class="card-text">
-                <small>
-                    <dt class="text-highlight" id="artistOK">
-                    </dt>
-                </small>
-            </p>
+         
         </div>
+
+
+
         <!-- 
             <div>
                 <dt class="col-sm-3">Description lists</dt>

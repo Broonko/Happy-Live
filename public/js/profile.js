@@ -1,36 +1,17 @@
 // var urlParams = new URLSearchParams(window.location.search);
+
+
 // let idArtist = urlParams.get('id') 
 
-axios
-    .get('http://localhost:3000/api/purchases', { headers: { token: localStorage.getItem('token') } })
-    .then(response => {
-        
-        response.data.forEach((purchase, i) => {
-            console.log(purchase)
-            let buy = document.getElementById('profilePurchases')
-            let newBuy = document.createElement('div')
-            newBuy.setAttribute('class', 'col')
-            newBuy.innerHTML = `
-                <div class="card h-100">
-                    <img src="${purchase.show.photo}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <div class="card-header border-danger text-end"> <a href="http://localhost:3000/showLive${i}.html" class="btn btn-danger">Watch</a></div>
-                            <p><h5 class="card-title">${purchase.show.name}</h5></p>
-                            <p class="card-text">${purchase.show.date}</p>
-                            <p class="card-text">Place: ${purchase.show.place}</p>
-                            <p id="showDuration">Duration: ${purchase.show.duration} min&emsp;&ensp;Price: ${purchase.show.price} eur</dt>
-                            <p id="showDescription"> ${purchase.show.description}</p>
-                        </div>
-                    </div>
-                </div>
-              `
-            buy.appendChild(newBuy)
-        })
-    })
-    .catch(err => { alert('error profilePurchases') })
+// myModal.addEventListener('shown.bs.modal', function () {
+//     myInput.focus()
+//   })
 
+// var myModal = new bootstrap.Modal(document.getElementById('myModal'), options)
 
-
+var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+var deposit = 10
 axios
     .get('http://localhost:3000/api/users/me', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
@@ -65,7 +46,7 @@ axios
         user = document.getElementById('profileBalance')
         newUser = document.createElement('dd')
         newUser.setAttribute('class', 'd-flex justify-content-center')
-        newUser.innerHTML = `${response.data.balance}&ensp;<div class="d-flex"><img src="images/s.png"/></div>`
+        newUser.innerHTML = `${response.data.balance += deposit}&ensp;<div class="d-flex"><img src="images/star.png"/></div>`
         user.appendChild(newUser)
 
         if (response.data.artist.genre) {
@@ -112,14 +93,62 @@ axios
     })
     .catch(err => { alert('error profile') })
 
+axios
+    .get('http://localhost:3000/api/purchases', { headers: { token: localStorage.getItem('token') } })
+    .then(response => {
+
+        response.data.forEach((purchase, i) => {
+            console.log(purchase)
+            let buy = document.getElementById('profilePurchases')
+            let newBuy = document.createElement('div')
+            newBuy.setAttribute('class', 'col')
+            newBuy.innerHTML = `
+            <div class="card h-100">
+                <img src="${purchase.show.photo}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <div class="card-header border-danger text-end"> <a href="http://localhost:3000/showLive${i}.html" class="btn btn-danger">Watch</a></div>
+                        <p><h5 class="card-title">${purchase.show.name}</h5></p>
+                        <p class="card-text">${purchase.show.date}</p>
+                        <p class="card-text">Place: ${purchase.show.place}</p>
+                        <p id="showDuration">Duration: ${purchase.show.duration} min&emsp;&ensp;Price: ${purchase.show.price} eur</dt>
+                        <p id="showDescription"> ${purchase.show.description}</p>
+                    </div>
+                </div>
+            </div>
+          `
+            buy.appendChild(newBuy)
+        })
+    })
+    .catch(err => { alert('error profilePurchases') })
+
+document.getElementById('buttonDeposit').addEventListener('click', () => {
+
+    axios
+        .get('http://localhost:3000/api/users/me', { headers: { token: localStorage.getItem('token') } })
+        .then(response => {
 
 
+            deposit = document.getElementById('amountDeposit').value
+            newBalance = parseInt(deposit)
+            console.log(newBalance)
+            newBalance += response.data.balance
+            console.log(newBalance)
+            axios
+                .put('http://localhost:3000/api/users/me', { balance: newBalance }, { headers: { token: localStorage.getItem('token') } })
+                .then(response => {
+                    console.log(response)
+                    window.location = "http://localhost:3000/profile.html"
+                })
+                .catch(err => { alert('error update deposit') })
+        })
+        .catch(err => { alert('error deposit') })
+})
 
-        // const artists = document.getElementById('artistList')
-        // response.data.forEach(artist => {
-        //     const newArtist = document.createElement('li')
-        //     newArtist.innerHTML = artist
-        //     artists.appendChild(newArtist)
 
-
-
+      // .save()
+                    // let user = document.getElementById('profileBalance')
+                    // let newBalance = document.createElement('dd')
+                    // newBalance.setAttribute('class', 'd-flex justify-content-center')
+                    // newBalance.innerHTML = `${deposit}&ensp;<div class="d-flex"><img src="images/star.png"/></div>`
+                    // user.removeChild(user.firstChild)
+                    // user.appendChild(newBalance)
