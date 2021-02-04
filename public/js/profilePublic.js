@@ -1,8 +1,8 @@
 let urlParams = new URLSearchParams(window.location.search);
 var idprofilePublic = urlParams.get('id')
 
-axios
-    .get(`http://localhost:3000/api/users/${idprofilePublic}`, { headers: { token: localStorage.getItem('token') } })
+api
+    .get(`/users/${idprofilePublic}`, { headers: { token: localStorage.getItem('token') } })
     .then(response => {
         let user = document.getElementById('profilePhoto')
         user.setAttribute('src', `${response.data.photo}`)
@@ -80,19 +80,19 @@ axios
                 ticket.innerHTML = ('Purchased')
                 ticket.setAttribute('class', 'btn btn-danger')
 
-                axios
-                    .get('http://localhost:3000/api/users/me', { headers: { token: localStorage.getItem('token') } })
+                api
+                    .get('/users/me', { headers: { token: localStorage.getItem('token') } })
                     .then(response => {
                         if (response.data.balance > showPrice) {
                             var newBalance = (response.data.balance - showPrice)
 
-                            axios
-                                .post('http://localhost:3000/api/purchases', {
+                            api
+                                .post('/purchases', {
                                     "show": show._id
                                 }, { headers: { token: localStorage.getItem('token') } })
                                 .then(response => {
-                                    axios
-                                        .put('http://localhost:3000/api/users/me', { balance: newBalance }, { headers: { token: localStorage.getItem('token') } })
+                                    api
+                                        .put('/users/me', { balance: newBalance }, { headers: { token: localStorage.getItem('token') } })
                                         .then(response => {
                                         })
                                         .catch(err => { alert('error update deposit') })

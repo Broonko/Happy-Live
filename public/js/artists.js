@@ -1,5 +1,10 @@
-axios
-    .get('http://localhost:3000/api/users', { headers: { token: localStorage.getItem('token') } })
+// const api = axios.create({
+//     baseURL: 'http://localhost:3000/api',
+//     timeout: 1000
+// })
+
+api
+    .get('/users', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
         const artists = document.getElementById('artistsPhotos')
         response.data.forEach(artist => {
@@ -12,8 +17,3 @@ axios
         })
     })
     .catch(err => { alert('do not have permission') })
-
-document.getElementById('loginh').addEventListener('click', () => {
-    localStorage.clear()
-    window.location.reload()
-})

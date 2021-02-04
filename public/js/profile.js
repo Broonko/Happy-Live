@@ -1,5 +1,5 @@
-axios
-    .get('http://localhost:3000/api/users/me', { headers: { token: localStorage.getItem('token') } })
+api
+    .get('/users/me', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
 
         let user = document.getElementById('profilePhoto')
@@ -85,8 +85,8 @@ axios
     })
     .catch(err => { alert('error profile') })
 
-axios
-    .get('http://localhost:3000/api/purchases', { headers: { token: localStorage.getItem('token') } })
+api
+    .get('/purchases', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
         response.data.forEach((purchase, i) => {
             let buy = document.getElementById('profilePurchases')
@@ -113,15 +113,15 @@ axios
 
 document.getElementById('buttonDeposit').addEventListener('click', () => {
 
-    axios
-        .get('http://localhost:3000/api/users/me', { headers: { token: localStorage.getItem('token') } })
+    api
+        .get('/users/me', { headers: { token: localStorage.getItem('token') } })
         .then(response => {
             deposit = document.getElementById('amountDeposit').value
             newBalance = parseInt(deposit)
             newBalance += response.data.balance
 
             axios
-                .put('http://localhost:3000/api/users/me', { balance: newBalance }, { headers: { token: localStorage.getItem('token') } })
+                .put('/users/me', { balance: newBalance }, { headers: { token: localStorage.getItem('token') } })
                 .then(response => {
                     window.location = "http://localhost:3000/profile.html"
                 })

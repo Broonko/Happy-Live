@@ -1,3 +1,8 @@
+const api = axios.create({
+    baseURL: 'http://localhost:3000/api',
+    timeout: 1000
+})
+
 window.onload = () => {
     let login = document.getElementById('loginh')
     if (localStorage.name !== undefined) {
@@ -19,8 +24,8 @@ window.onload = () => {
     }
 }
 
-axios
-    .get('http://localhost:3000/api/users', { headers: { token: localStorage.getItem('token') } })
+api
+    .get('/users', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
     })
     .catch(err => { alert('error home') })
@@ -38,7 +43,7 @@ document.getElementById('loginh').addEventListener('click', () => {
 
 document.getElementById('searchButton').addEventListener('click', () => {
     let search = document.getElementById('searchShow').value
-    
+
     if (search === 'music') {
         window.location = "http://localhost:3000/shows.html?type=music"
     } else {
@@ -53,4 +58,3 @@ document.getElementById('searchButton').addEventListener('click', () => {
         }
     }
 })
-

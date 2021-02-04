@@ -1,6 +1,11 @@
+const api = axios.create({
+    baseURL: 'http://localhost:3000/api',
+    timeout: 1000
+})
+
 document.getElementById('signup').addEventListener('click', () => {
-    axios
-        .post('http://localhost:3000/api/auth/signup', {
+    api
+        .post('/auth/signup', {
             name: document.getElementById('signup_name').value,
             email: document.getElementById('signup_email').value,
             password: document.getElementById('signup_password').value
@@ -18,8 +23,8 @@ document.getElementById('signup').addEventListener('click', () => {
 })
 
 document.getElementById('login').addEventListener('click', () => {
-    axios
-        .post('http://localhost:3000/api/auth/login', {
+    api
+        .post('/auth/login', {
             email: document.getElementById('login_email').value,
             password: document.getElementById('login_password').value
         })

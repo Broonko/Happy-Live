@@ -11,28 +11,15 @@ module.exports = {
 }
 
 function getAllArtists(req, res) {
-  console.log(req.query)
-  UserModel
-    .find(req.query)
+  const query = req.query.name ? {name: {$regex: `${req.query.name}`, $options: 'i'}} : {}
+  UserModel                                
+    .find(query)
     .populate({
       path: 'artist.shows',
       'model': 'show'
     })
     .then(response => {
       res.json(response)
-      // let result = []
-      // response.forEach(elem => {
-      //   if (elem.artist.genre) {
-      //     console.log(elem.name)
-      //     console.log(elem._id)
-      //     result.push({
-      //       name: elem.name,
-      //       id: elem._id,
-      //       photo: elem.photo
-      //     })
-      //   }
-      // })
-      // res.send(result)
     })
     .catch((err) => handleError(err, res))
 }
@@ -49,7 +36,6 @@ function getUserById(req, res) {
 }
 
 function getProfile(req, res) {
-  console.log("++++++" + res.locals.userId)
   UserModel
     .findById(res.locals.userId)
     .populate({
@@ -59,11 +45,8 @@ function getProfile(req, res) {
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
-// ${res.locals.user.name} ${res.locals.user.email}
 
 function updateUser(req, res) {
-  console.log(res.locals.userId)
-  console.log(req.body)
   UserModel
     .findByIdAndUpdate(res.locals.userId, req.body, {
       new: true,
@@ -74,19 +57,13 @@ function updateUser(req, res) {
 }
 
 function updateArtist(req, res) {
-  console.log(res.locals.userId)
-  console.log(req.body)
   UserModel
     .findByIdAndUpdate(res.locals.userId, req.body, {
       new: true,
-      runValidators: true,
-      omitUndefined: true
-      
+      runValidators: true
     })
     .then(response => {
-      console.log(response)
       res.json(response)
     })
     .catch((err) => handleError(err, res))
 }
-

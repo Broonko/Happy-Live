@@ -1,6 +1,11 @@
+const api = axios.create( {
+    baseURL: 'http://localhost:3000/api',
+    timeout: 1000
+})
+
 document.getElementById('beAnArtist').addEventListener('click', () => {
-    axios
-        .put('http://localhost:3000/api/users/me/artist', {
+    api
+        .put('/users/me/artist', {
             "artist.genre": document.getElementById('editGenre').value,
             "artist.bio": document.getElementById('editBio').value
         }, { headers: { token: localStorage.getItem('token') } })

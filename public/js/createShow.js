@@ -1,8 +1,12 @@
+const api = axios.create({
+    baseURL: 'http://localhost:3000/api',
+    timeout: 1000
+})
 var picker = new Pikaday({ field: document.getElementById('datepicker') });
 
 document.getElementById('createShow').addEventListener('click', () => {
-    axios
-        .post('http://localhost:3000/api/shows', {
+    api
+        .post('/shows', {
             "name": document.getElementById('createName').value,
             "type": document.getElementById('createType').value,
             "date": document.getElementById('datepicker').value,

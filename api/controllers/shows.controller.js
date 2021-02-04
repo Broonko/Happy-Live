@@ -8,15 +8,10 @@ module.exports = {
     getShows,
     getShowsByName,
     getShowsByGenre
-
 }
 
 function createShow(req, res) {
-    console.log(req.body.name + res.locals.userId + '+++++++createshow')
-    console.log(res.locals.artist.genre)
-    console.log(res.locals.artistName)
     if (res.locals.artist.genre) {
-        console.log("......" + res.locals.artist.genre)
         ShowModel
             .create({
                 name: req.body.name,
@@ -31,63 +26,43 @@ function createShow(req, res) {
             })
             .populate('user')
             .then(response => {
-                console.log("hola response")
-                console.log("////" + res.locals.userId)
-                console.log("ppppp" + res.locals.artist)
                 UserModel
                     .findOne(res.locals.userId)
                     .then(user => {
-                        console.log("%%%" + user)
-                        // res.locals.artist.push(user._id)
-                        console.log("?????" + user._id)
                         user.artist.shows.push(response._id)
                         user.save()
-                        console.log(user.artist.shows)
-                        console.log("----" + res.locals.artist)
                     })
                     .catch((err) => handleError(err, res))
                 res.json(response)
             })
             .catch((err) => handleError(err, res))
     } else {
-        console.log('no eres artista')
         res.send('No puedes crear un show porque no eres artista')
     }
 }
 
 function getShows(req, res) {
-    console.log("*******")
-    console.log("***entra por aqui siempre***")
     ShowModel
         .find(req.query)
         .then(response => {
-            // console.log(response)
             res.json(response)
             response.forEach(show => {
-
-                console.log(show.name)
             })
-
         })
         .catch((err) => handleError(err, res))
 }
 
 function getShowsByGenre(req, res) {
-    console.log("***" + req.query.type)
+    const query = { name: {$regex: `${req.params.type}`, $options: 'i'}} 
     ShowModel
-        .find({ type: req.params.type })
+        .find({ type: { $regex: `${req.params.type}`, $options: 'i' }})
         .then(response => res.json(response))
         .catch((err) => handleError(err, res))
 }
 
 function getShowsByName(req, res) {
-    console.log("+++" + req.query)
     ShowModel
-        .find({ name: req.params.name })
+        .find({ name: { $regex: `${req.params.name}`, $options: 'i' }})
         .then(response => res.json(response))
         .catch((err) => handleError(err, res))
 }
-
-
-
-
