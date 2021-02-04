@@ -77,11 +77,11 @@ function updateArtist(req, res) {
   console.log(res.locals.userId)
   console.log(req.body)
   UserModel
-    .findByIdAndUpdate(res.locals.userId, {$set : req.body}, {
+    .findByIdAndUpdate(res.locals.userId, req.body, {
       new: true,
       runValidators: true,
-      omitUndefined: true,
-      upsert: true
+      omitUndefined: true
+      
     })
     .then(response => {
       console.log(response)

@@ -40,7 +40,19 @@ axios
         user.appendChild(newUser)
 
         user = document.getElementById('web')
-        user.setAttribute('href', `${response.data.web}`)
+        user.setAttribute('href', `${response.data.social.web}`)
+
+        user = document.getElementById('youtube')
+        user.setAttribute('href', `${response.data.social.youtube}`)
+
+        user = document.getElementById('facebook')
+        user.setAttribute('href', `${response.data.social.facebook}`)
+
+        user = document.getElementById('twitter')
+        user.setAttribute('href', `${response.data.social.twitter}`)
+
+        user = document.getElementById('instagram')
+        user.setAttribute('href', `${response.data.social.instagram}`)
 
         response.data.artist.shows.forEach((show, i) => {
             user = document.getElementById('profileShows')

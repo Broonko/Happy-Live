@@ -1,3 +1,5 @@
+var picker = new Pikaday({ field: document.getElementById('datepicker') });
+
 document.getElementById('createShow').addEventListener('click', () => {
     axios
         .post('http://localhost:3000/api/shows', {

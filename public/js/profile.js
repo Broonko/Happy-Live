@@ -1,7 +1,7 @@
 axios
     .get('http://localhost:3000/api/users/me', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
-        
+
         let user = document.getElementById('profilePhoto')
         user.setAttribute('src', `${response.data.photo}`)
 
@@ -22,6 +22,22 @@ axios
         newUser.setAttribute('class', 'd-flex justify-content-start fs-6 fw-normal')
         newUser.innerHTML = `${response.data.balance}&ensp;<div class="d-flex"><img src="images/star.png"/></div>`
         user.appendChild(newUser)
+
+        user = document.getElementById('web')
+        user.setAttribute('href', `${response.data.social.web}`)
+
+        user = document.getElementById('youtube')
+        user.setAttribute('href', `${response.data.social.youtube}`)
+
+        user = document.getElementById('facebook')
+        user.setAttribute('href', `${response.data.social.facebook}`)
+
+        user = document.getElementById('twitter')
+        user.setAttribute('href', `${response.data.social.twitter}`)
+
+        user = document.getElementById('instagram')
+        user.setAttribute('href', `${response.data.social.instagram}`)
+
 
         if (response.data.artist.genre) {
             user = document.getElementById('artistOK')
@@ -50,18 +66,18 @@ axios
                 newUser = document.createElement('div')
                 newUser.setAttribute('class', 'col')
                 newUser.innerHTML = `
-                    <div class="card h-100">
-                        <img src="${show.photo}" class="card-img-top" alt="...">
-                        <div class="card-header border-success text-end"> <a href="#" class="btn btn-success">Buy ticket</a></div>
-                            <div class="card-body">
-                                <p><h5 class="card-title">${show.name}</h5></p>
-                                <p class="card-text">${show.date}</p>
-                                <p class="card-text">Place: ${show.place}</p>
-                                <p id="showDuration">Duration: ${show.duration} min&emsp;&ensp;Price: ${show.price} eur</dt>
-                                <p id="showDescription"> ${show.description}</p>
-                            </div>
+                <div class="card h-100">
+                    <img src="${show.photo}" class="card-img-top" alt="...">
+                    <div class="card-header border-success text-end"> <a href="#" class="btn btn-warning">Live stream</a></div>
+                        <div class="card-body">
+                            <p><h5 class="card-title">${show.name}</h5></p>
+                            <p class="card-text">${show.date}</p>
+                            <p class="card-text">Place: ${show.place}</p>
+                            <p id="showDuration">Duration: ${show.duration} min&emsp;&ensp;Price: ${show.price} eur</dt>
+                            <p id="showDescription"> ${show.description}</p>
                         </div>
                     </div>
+                </div>
                   `
                 user.appendChild(newUser)
             })

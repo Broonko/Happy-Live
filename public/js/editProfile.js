@@ -1,9 +1,11 @@
 document.getElementById('saveUser').addEventListener('click', () => {
-axios
+console.log(document.getElementById('editWeb').value)
+    axios
     .put('http://localhost:3000/api/users/me', {
         "name":  document.getElementById('editName').value,
         "email":  document.getElementById('editEmail').value,
         "passwd": document.getElementById('editPassword').value,
+        "photo": document.getElementById('editPhoto').value,
         "address": document.getElementById('editAddress').value,
         "location": document.getElementById('editLocation').value,
         "province": document.getElementById('editState').value,
@@ -13,8 +15,7 @@ axios
         "social.youtube": document.getElementById('editYoutube').value,
         "social.facebook": document.getElementById('editFacebook').value,
         "social.twitter": document.getElementById('editTwitter').value,
-        "social.instagram": document.getElementById('editInstagram').value,
-        "photo": document.getElementById('editPhoto').value
+        "social.instagram": document.getElementById('editInstagram').value
     }, { headers: { token: localStorage.getItem('token') } })
     .then(response => {
         window.location = "http://localhost:3000/profile.html"

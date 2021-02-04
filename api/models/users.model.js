@@ -20,6 +20,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  photo: {
+    type: String
+  },
   location: {
     type: String
   },
@@ -41,13 +44,32 @@ const userSchema = new mongoose.Schema({
       maxlength: 150,
       required: false
     },
-    shows:[{
+    shows: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'show'
     }]
   },
-  photo: {
-    type: String
+  social: {
+    web: {
+      type: String,
+      require: false
+    },
+    youtube: {
+      type: String,
+      require: false
+    },
+    facebook: {
+      type: String,
+      require: false
+    },
+    twitter: {
+      type: String,
+      require: false
+    },
+    instagram: {
+      type: String,
+      require: false
+    }
   }
 })
 

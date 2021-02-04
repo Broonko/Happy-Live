@@ -38,7 +38,8 @@ const showSchema = new mongoose.Schema({
         required: true
     },
     photo: {
-        type: String
+        type: String,
+        required: true
     }
 })
 
