@@ -1,8 +1,3 @@
-// const api = axios.create({
-//     baseURL: 'http://localhost:3000/api',
-//     timeout: 1000
-// })
-
 api
     .get('/users', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
