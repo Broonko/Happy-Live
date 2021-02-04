@@ -9,44 +9,31 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
-    <!-- <link rel="stylesheet" href="css/estilos.css">  -->
     <title>Artists</title>
     <script src="js/protect.js"></script>
-    <!-- <style type="text/css">
-        .zoom{
-            /* Aumentamos la anchura y altura durante 2 segundos */
-            transition: width 3s, height 3s, transform 3s;
-        }
-        .zoom:hover{
-            /* tranformamos el elemento al pasar el mouse por encima al doble de
-               su tamaño con scale(2). */
-            transform : scale(1.2);
-        }
-    </style> -->
 </head>
 
 <body>
     <div class="container-fluid">
-
+        <!-- Headboard -->
         <header class="d-flex beta">
-            <div class="p-2 flex-grow-1 ">
-                <a class=" beta" href="http://localhost:3000/index.html">
-                    <img src="images/Logo.gif" alt="Logo" width="100" height="100" class="d-inline-block align-center">
-                    <p id="happy" class="d-inline-block">Happy Live</p>
-
-                </a>
+            <div class="p-2 flex-grow-1">
+                <div class="d-inline-block" href="http://localhost:3000/index.html">
+                    <img src="images/Logo.gif" alt="Logo" width="90" height="90"
+                        class="d-inline-block rounded-circle align-center mb-2">
+                </div>
+                <p id="happy" class="d-inline-block mt-4">Happy Live</p>
             </div>
             <div class="cp-2" href="">
-                <button type="submit" class="button mt-5" id="loginh">LOGIN</button>
-
+                <button type="submit" class="box-shadow btn rounded-pill mt-5" id="loginh">Login</button>
             </div>
             <div class="p-2">
-                <a id="userName" class="nav-link" href="http://localhost:3000/profile.html">
-                    <img class="mt-2 ms-1" src="images/user.png" alt="UserImagen" width="50">
+                <a id="userName" class="nav-link d-none d-md-block" href="http://localhost:3000/profile.html">
+                    <img class="d-none d-sm-block mt-2 m-auto" src="images/user.png" alt="UserImagen" width="50">
                 </a>
             </div>
         </header>
-
+        <!-- Navigation bar -->
         <nav class="navbar navbar-expand-sm navbar-light"
             style="background-image: linear-gradient(120deg, #dfdede, #f3f3f3);">
             <div class="">
@@ -67,16 +54,11 @@
                 </div>
             </div>
         </nav>
-
+        <!-- Body -->
         <section>
-
-            <div class="row d-flex bd-highlight">
-                <div class="d-flex justify-content-around">
-                    <div class="p-2 bd-highlight">
-                        <h1>ARTISTS</h1>
-                    </div>
-                </div>
-            </div>
+            <div class="my-3 text-center">
+                <h1>ARTISTS</h1>
+              </div>
             <div class="container-fluid">
                 <div id="artistsPhotos">
 

@@ -1,16 +1,9 @@
 let urlParams = new URLSearchParams(window.location.search);
 var idprofilePublic = urlParams.get('id')
-console.log(idprofilePublic)
 
 axios
     .get(`http://localhost:3000/api/users/${idprofilePublic}`, { headers: { token: localStorage.getItem('token') } })
     .then(response => {
-        // console.log(response.data.artist.shows)
-        // console.log(localStorage.name)
-        // console.log(localStorage._id)
-        // console.log(response.data)
-        // console.log(response.data.artist.genre)
-
         let user = document.getElementById('profilePhoto')
         user.setAttribute('src', `${response.data.photo}`)
 
@@ -46,6 +39,9 @@ axios
         newUser.innerHTML = response.data.artist.bio
         user.appendChild(newUser)
 
+        user = document.getElementById('web')
+        user.setAttribute('href', `${response.data.web}`)
+
         response.data.artist.shows.forEach((show, i) => {
             user = document.getElementById('profileShows')
             newUser = document.createElement('div')
@@ -68,47 +64,32 @@ axios
 
             var ticket = document.getElementById(`buyTicket${i}`)
             ticket.addEventListener('click', () => {
-                console.log("hola" + show._id)
-                console.log("holaa" + show.price)
-                console.log("holaaa" + localStorage._id)
                 var showPrice = show.price
-
                 ticket.innerHTML = ('Purchased')
                 ticket.setAttribute('class', 'btn btn-danger')
-                // ticket.setAttribute('id', `purchased${i}`)
 
                 axios
                     .get('http://localhost:3000/api/users/me', { headers: { token: localStorage.getItem('token') } })
                     .then(response => {
-                        console.log(response.data.balance)
-                        console.log(showPrice)
-                        console.log(show._id)
                         if (response.data.balance > showPrice) {
-
                             var newBalance = (response.data.balance - showPrice)
-                            console.log(newBalance)
-                            console.log(show._id)
+
                             axios
                                 .post('http://localhost:3000/api/purchases', {
                                     "show": show._id
                                 }, { headers: { token: localStorage.getItem('token') } })
                                 .then(response => {
-                                    console.log("compra hecha")
                                     axios
                                         .put('http://localhost:3000/api/users/me', { balance: newBalance }, { headers: { token: localStorage.getItem('token') } })
                                         .then(response => {
-                                            console.log(response.data.balance)
-                                            console.log("dinero descontado")
-                                            // window.location = "http://localhost:3000/profile.html"
                                         })
                                         .catch(err => { alert('error update deposit') })
-                                    // response.json(response)
                                 })
-                                .catch(err => { alert('no suficiente dinero') })
+                                .catch(err => { alert('no enough money') })
                         } else { alert('Not enough money') }
                     })
                     .catch(err => { alert('error buy ticket') })
             })
         })
     })
-    .catch(err => { alert('error profile') })
+    .catch(err => { alert('error profile public') })

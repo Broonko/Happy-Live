@@ -1,12 +1,3 @@
-// axios
-//     .get(`http://localhost:3000/api/users/${localStorage._id}`, { headers: { token: localStorage.getItem('token') } })
-//     .then(response => {
-//         console.log(localStorage.name)
-//         console.log(localStorage._id)
-//         console.log(response.data)
-//     })
-//     .catch(err => { alert('do not have permission') })
-
 document.getElementById('saveUser').addEventListener('click', () => {
 axios
     .put('http://localhost:3000/api/users/me', {
@@ -26,14 +17,7 @@ axios
         "photo": document.getElementById('editPhoto').value
     }, { headers: { token: localStorage.getItem('token') } })
     .then(response => {
-        console.log(localStorage.name)
-        console.log(localStorage._id)
-        console.log(response.data)
         window.location = "http://localhost:3000/profile.html"
     })
     .catch(err => { alert('do not have permission') })
-
-
-    // localStorage.clear()
-    
 })

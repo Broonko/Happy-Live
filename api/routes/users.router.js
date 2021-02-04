@@ -6,19 +6,14 @@ const {
   getProfile,
   getUserById,
   updateUser,
-  updateArtist,
-  deleteUserById
+  updateArtist
 } = require('../controllers/users.controller')
 
 router
   .get('/', getAllArtists)
-  // .get('/name')
   .get('/me', authUser, getProfile)
   .get('/:id', authUser, getUserById)
   .put('/me', authUser, updateUser)
   .put('/me/artist', authUser, updateArtist)
-
-
-// .delete('/:id', deleteUserById)
 
 module.exports = router

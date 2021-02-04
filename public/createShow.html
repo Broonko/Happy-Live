@@ -16,70 +16,60 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
 </head>
 
-<!-- style="background-image: url('images/concert.jpg'); background-color: transparent;" -->
-
 <body>
 
-    <!-- style="background-image: url('images/concert.jpg'); class="opacity-25" -->
     <div class="container-fluid">
-
-
-        <section >
-      
-        <h1>Create your show</h1>
-        <br>
-        <form class="box row g-3">
-            <div class="col-12 mt-4">
-                <label for="createName" class="form-label">Name</label>
-                <input type="text" class="form-control" id="createName" placeholder="Give it a nice name">
-            </div>
-            <div class="col-3 mt-4">
-                <label for="createType" class="form-label">Type</label>
-                <input class="form-control" list="datalistOptions" id="createType" placeholder="Choose...">
-                <datalist id="datalistOptions">
-                    <option value="Music">
-                    <option value="Comedy">
-                    <option value="Kids">
-                </datalist>
-            </div>
-            <div class="col-2 mt-4">
-                <label for="createDate" class="form-label">Date</label>
-                <!-- <input type="text" class="form-control" id="createDate" placeholder=""> -->
-                <input type="text" class="form-control" id="datepicker">
-            </div>
-            <div class="col-4 mt-4">
-                <label for="createPlace" class="form-label">Place</label>
-                <input type="text" class="form-control" id="createPlace" placeholder="">
-            </div>
-            <div class="col-2 mt-4">
-                <label for="createDuration" class="form-label">Duration</label>
-                <input type="text" class="form-control" id="createDuration" placeholder="Type minutes">
-            </div>
-            <div class="col-1 mt-4">
-                <label for="createPrice" class="form-label">Price</label>
-                <input type="text" class="form-control" id="createPrice" placeholder="">
-            </div>
-            <div class="col-12 mt-4">
-                <label for="createDescription" class="form-label">Description</label>
-                <input type="text" class="form-control" id="createDescription" placeholder="">
-            </div>
-            <div class="col-12 mt-4">
-                <label for="createPhoto" class="form-label">Image input</label>
-                <input class="form-control" id="createPhoto" type="text">
-            </div>
-
-            <div class="col-12 mt-4">
-                <button id="createShow" type="submit" class="btn btn-warning mb-3">Create</button>
-            </div>
-        </form>
-    </section>
+        <section>
+            <h1>Create your show</h1>
+            <br>
+            <form class="box row g-3">
+                <div class="col-12 mt-4">
+                    <label for="createName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="createName" placeholder="Give it a nice name">
+                </div>
+                <div class="col-3 mt-4">
+                    <label for="createType" class="form-label">Type</label>
+                    <input class="form-control" list="datalistOptions" id="createType" placeholder="Choose...">
+                    <datalist id="datalistOptions">
+                        <option value="Music">
+                        <option value="Comedy">
+                        <option value="Kids">
+                    </datalist>
+                </div>
+                <div class="col-2 mt-4">
+                    <label for="createDate" class="form-label">Date</label>
+                    <input type="text" class="form-control" id="datepicker">
+                </div>
+                <div class="col-4 mt-4">
+                    <label for="createPlace" class="form-label">Place</label>
+                    <input type="text" class="form-control" id="createPlace" placeholder="">
+                </div>
+                <div class="col-2 mt-4">
+                    <label for="createDuration" class="form-label">Duration</label>
+                    <input type="text" class="form-control" id="createDuration" placeholder="Type minutes">
+                </div>
+                <div class="col-1 mt-4">
+                    <label for="createPrice" class="form-label">Price</label>
+                    <input type="text" class="form-control" id="createPrice" placeholder="">
+                </div>
+                <div class="col-12 mt-4">
+                    <label for="createDescription" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="createDescription" placeholder="">
+                </div>
+                <div class="col-12 mt-4">
+                    <label for="createPhoto" class="form-label">Image input</label>
+                    <input class="form-control" id="createPhoto" type="text">
+                </div>
+                <div class="col-12 mt-4">
+                    <button id="createShow" type="submit" class="btn btn-warning mb-3">Create</button>
+                </div>
+            </form>
+        </section>
     </div>
 
-    <!-- <script src="pikaday.js"></script> -->
     <script>
         var picker = new Pikaday({ field: document.getElementById('datepicker') });
     </script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>

@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now() // Get a timestamp :)
+    default: Date.now()
   },
   artist: {
     genre: {
@@ -44,10 +44,6 @@ const userSchema = new mongoose.Schema({
     shows:[{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'show'
-    }],
-    followers: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'user'
     }]
   },
   photo: {

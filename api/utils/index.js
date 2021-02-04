@@ -3,8 +3,6 @@ const UserModel = require('../models/users.model')
 
 // Authenticate Middleware
 function authUser(req, res, next) {
-console.log("*******authUser working********")
- console.log(req.headers.token)
   if (!req.headers.token) {
     res.status(403).json({ error: 'No Token found' })
   } else {
@@ -13,10 +11,10 @@ console.log("*******authUser working********")
 
       UserModel
         .findOne({ email: token.email })
-        .then(user => {//ojo en user esta el dato passwd.Hay que crear una const quitandolo
+        .then(user => {
           res.locals.userId = user._id
           res.locals.artist = user.artist
-          res.locals.artistName = user.name//mantiene la info del usuario registrado
+          res.locals.artistName = user.name
           console.log("*******authUser working********")
           next()
         })

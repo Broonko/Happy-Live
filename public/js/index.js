@@ -22,43 +22,35 @@ window.onload = () => {
 axios
     .get('http://localhost:3000/api/users', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
-        console.log(response.data)
-
     })
     .catch(err => { alert('error home') })
 
-
-// document.getElementById('loginh').addEventListener('click', () => {
-//     // localStorage.clear()
-//     window.location = "http://localhost:3000/login.html"
-// })
-
 document.getElementById('loginh').addEventListener('click', () => {
-
     if (localStorage.name) {
+
         localStorage.clear()
         window.location.reload()
+
     } else {
         window.location = "http://localhost:3000/login.html"
     }
 })
 
 document.getElementById('searchButton').addEventListener('click', () => {
-
-    console.log('entra')
     let search = document.getElementById('searchShow').value
-    console.log(search)
-
+    
     if (search === 'music') {
         window.location = "http://localhost:3000/shows.html?type=music"
-    }
-    if (search === 'comedy') {
-        window.location = "http://localhost:3000/shows.html?type=comedy"
-    }
-    if (search === 'kids') {
-        window.location = "http://localhost:3000/shows.html?type=kids"
     } else {
-        window.location = `http://localhost:3000/shows.html?name=${search}`
+        if (search === 'comedy') {
+            window.location = "http://localhost:3000/shows.html?type=comedy"
+        } else {
+            if (search === 'kids') {
+                window.location = "http://localhost:3000/shows.html?type=kids"
+            } else {
+                window.location = `http://localhost:3000/shows.html?name=${search}`
+            }
+        }
     }
 })
 

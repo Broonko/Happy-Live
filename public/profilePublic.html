@@ -15,24 +15,26 @@
 </head>
 
 <body>
+    <!-- Headboard -->
     <div class="container-fluid">
         <header class="d-flex beta">
             <div class="p-2 flex-grow-1">
-                <a class="" href="http://localhost:3000/index.html">
-                    <img src="images/Logo.gif" alt="Logo" class="d-inline-block rounded-circle" width="90" height="90">
-                    Happy Live
-                </a>
+                <div class="d-inline-block" href="http://localhost:3000/index.html">
+                    <img src="images/Logo.gif" alt="Logo" width="90" height="90"
+                        class="d-inline-block rounded-circle align-center mb-2">
+                </div>
+                <p id="happy" class="d-inline-block mt-4">Happy Live</p>
             </div>
             <div class="cp-2" href="">
-                <button type="submit" class="button mt-4" id="loginh">LOGIN</button>
+                <button type="submit" class="box-shadow btn rounded-pill mt-5" id="loginh">Login</button>
             </div>
             <div class="p-2">
-                <a id="userName" class="nav-link" href="http://localhost:3000/profile.html">
-                    <img class="mt-2 ms-2" src="images/user.png" alt="UserImagen" width="50">
+                <a id="userName" class="nav-link d-none d-md-block" href="http://localhost:3000/profile.html">
+                    <img class="d-none d-sm-block mt-2 m-auto" src="images/user.png" alt="UserImagen" width="50">
                 </a>
             </div>
         </header>
-
+        <!-- Navigation Bar -->
         <nav class="navbar navbar-expand-sm navbar-light"
             style="background-image: linear-gradient(120deg, #dfdede, #f3f3f3);">
             <div class="">
@@ -56,19 +58,18 @@
 
         <div class="row d-flex bd-highlight">
             <div class="d-flex justify-content-around">
-                <!-- <a class="nav-link p-2 bd-highlight" href="http://localhost:3000/editProfile.html">Edit</a> -->
                 <div class="my-3 bd-highlight fs-1">
                     <h1>PROFILE</h1>
                 </div>
-                <!-- <a class="p-2 bd-highlight" href="http://localhost:3000/beArtist.html">Be an artist</a> -->
             </div>
         </div>
         <div class="container-fluid">
-        <!-- //quitar la linea de abajo a ver que pasa -->
-            <div class="row mb-3" style="max-width: 1200">
+            <!-- //quitar la linea de abajo a ver que pasa -->
+            <section>
+
                 <div class="row g-0">
                     <div class="col-md-5">
-                        <img id="profilePhoto" class="shadow-lg p-3" src="..." alt="...">
+                        <img id="profilePhoto" class="box-shadow p-1" src="..." alt="...">
                         <p class="card-text d-block">
                             <small>
                                 <dt class="text-highlight fs-4" id="artistOK">
@@ -115,43 +116,17 @@
                             <img src="images/instagram.png" alt="">
                         </a>
                     </div>
-
-
-
-
-
                 </div>
+            </section>
+
+            <div class="my-3 text-center">
+                <h1>Shows</h1>
             </div>
-        </div>
-
-<!-- 
-
-        <div>
-            <dt class="col-sm-3">Description lists</dt>
-            <dd class="col-sm-9">A description </dd>
-        </div>
-
-        <dl class="row">
-            <dt class="col-sm-3">Description lists</dt>
-            <dd class="col-sm-9">A description list .</dd>
-        </dl> -->
-
-
-
-        <br>
-        <h1>Shows</h1>
-        <div id="profileShows" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            <!-- // Aqui se muestran los shows disponibles para comprar de un artista -->
+            <div id="profileShows" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Here are shows available to buy from an artist -->
+            </div>
 
         </div>
-
-        <!-- <ul class="list-inline">
-            <li class="list-inline-item">Lorem ipsum</li>
-            <li class="list-inline-item">Phasellus iaculis</li>
-            <li class="list-inline-item">Nulla volutpat</li>
-        </ul> -->
-
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
             crossorigin="anonymous"></script>

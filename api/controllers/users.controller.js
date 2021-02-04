@@ -7,9 +7,7 @@ module.exports = {
   getUserById,
   getProfile,
   updateUser,
-  updateArtist,
-  deleteUserById
-
+  updateArtist
 }
 
 function getAllArtists(req, res) {
@@ -79,10 +77,11 @@ function updateArtist(req, res) {
   console.log(res.locals.userId)
   console.log(req.body)
   UserModel
-    .findByIdAndUpdate(res.locals.userId, req.body, {
+    .findByIdAndUpdate(res.locals.userId, {$set : req.body}, {
       new: true,
       runValidators: true,
-      upsert: false
+      omitUndefined: true,
+      upsert: true
     })
     .then(response => {
       console.log(response)
@@ -91,35 +90,3 @@ function updateArtist(req, res) {
     .catch((err) => handleError(err, res))
 }
 
-
-// function updateArtist(req, res) {
-//   // console.log(res.locals.userId)
-//   // console.log(res.locals.artist.genre)
-//   // console.log(req.body)
-//   if (res.locals.artist.genre) {
-//   UserModel
-//     .findByIdAndUpdate(res.locals.userId, req.body, {
-//       new: true,
-//       runValidators: true
-//     })
-//     .then(response => res.json({
-//       name: response.name
-//     }))
-//     .catch((err) => handleError(err, res))
-//   } else {
-//       console.log('No eres un artista')
-//       res.send('No eres un artista')
-//   }
-// }
-
-
-
-
-
-
-function deleteUserById(req, res) {
-  UserModel
-    .remove({ _id: req.params.id })
-    .then(response => res.json(response))
-    .catch(err => handleError(err, res))
-}

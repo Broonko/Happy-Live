@@ -16,35 +16,29 @@
 
 <body>
 
-    <h1>Be an artist</h1>
-    <br>
-    <form class="row g-3">
-        <div class="col-4 mt-3">
-            <label for="editGenre" class="form-label">Genre</label>
-            <select type="text" class="form-control" id="editGenre">
-                <option selected>Choose...</option>
-                <option>Music</option>
-                <option>Comedy</option>
-                <option>Infantil</option>
-            </select>
-        </div>
-        <!-- <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-            <label for="floatingTextarea2">Comments</label>
-          </div> -->
-        <div class="col-12 mt-4">
-            <label for="editBio" class="form-label">Bio</label>
-            <textarea class="form-control" id="editBio" placeholder="Explain who you are"
-                style="height: 100px"></textarea>
-        </div>
-
-        <div class="col-12 mt-4">
-
-            <button id="beAnArtist" type="submit" class="btn btn-primary">Save</button>
-
-        </div>
-
-    </form>
+    <section>
+        <h1>Be an artist</h1>
+        <br>
+        <form class="boxArtist row g-3">
+            <div class="col-4 mt-3">
+                <label for="editGenre" class="form-label">Genre</label>
+                <select type="text" class="form-control" id="editGenre">
+                    <option selected>Choose...</option>
+                    <option>Music</option>
+                    <option>Comedy</option>
+                    <option>Infantil</option>
+                </select>
+            </div>
+            <div class="col-12 mt-4">
+                <label for="editBio" class="form-label">Bio</label>
+                <textarea class="form-control" id="editBio" placeholder="Explain who you are"
+                    style="height: 100px"></textarea>
+            </div>
+            <div class="col-12 mt-4">
+                <button id="beAnArtist" type="submit" class="btn btn-danger">Save</button>
+            </div>
+        </form>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"

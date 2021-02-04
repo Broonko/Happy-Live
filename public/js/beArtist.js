@@ -5,9 +5,6 @@ document.getElementById('beAnArtist').addEventListener('click', () => {
             "artist.bio": document.getElementById('editBio').value
         }, { headers: { token: localStorage.getItem('token') } })
         .then(response => {
-            console.log(localStorage.name)
-            console.log(localStorage._id)
-            console.log(response.data)
             window.location = "http://localhost:3000/profile.html"
         })
         .catch(err => { alert('do not have permission') })

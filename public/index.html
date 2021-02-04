@@ -10,11 +10,12 @@
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <title>Home</title>
-
 </head>
 
-<body style="background-color: #f3f3f3;">
+<body>
+
     <div class="container-fluid">
+        <!-- Headboard -->
         <header class="d-flex beta">
             <div class="p-2 flex-grow-1">
                 <div class="d-inline-block" href="http://localhost:3000/index.html">
@@ -24,16 +25,15 @@
                 <p id="happy" class="d-inline-block mt-4">Happy Live</p>
             </div>
             <div class="cp-2" href="">
-                <!-- <button type="submit" class="button mt-4" id="logout">LOGOUT</button> -->
                 <button type="submit" class="box-shadow btn rounded-pill mt-5" id="loginh">Login</button>
             </div>
             <div class="p-2">
                 <a id="userName" class="nav-link d-none d-md-block" href="http://localhost:3000/profile.html">
-                    <img class="d-none d-sm-block mt-1 ms-2" src="images/user.png" alt="UserImagen" width="50">
+                    <img class="d-none d-sm-block mt-2 m-auto" src="images/user.png" alt="UserImagen" width="50">
                 </a>
             </div>
         </header>
-        <!-- #dfdede -->
+        <!-- Navigation bar -->
         <nav class="navbar navbar-expand-sm navbar-light"
             style="background-image: linear-gradient(120deg, #dfdede, #f3f3f3);">
             <div class="">
@@ -54,36 +54,26 @@
                 </div>
             </div>
         </nav>
-
+        <!-- Search -->
         <div class="input-group">
             <input id="searchShow" class="form-control my-3"
                 placeholder="Input name, type of show or artist name to search...">
-            <!-- <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button> -->
             <div class="my-3">
                 <button type="submit" id="searchButton" class="btn btn-warning">Search</button>
             </div>
         </div>
-        <figure class="text-center">
-            <blockquote class="blockquote">
-                <h3>Welcome to HAPPY LIVE</h3>
-            </blockquote>
-            <figcaption class="blockquote-footer">
-                <cite title="Slogan"> your unique show</cite>
-            </figcaption>
-        </figure>
-        <br>
-        <!-- 
-        <div class="card bg-dark text-white">
-            <img src="..." class="card-img" alt="...">
-            <div class="card-img-overlay">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <p class="card-text">Last updated 3 mins ago</p>
-            </div>
-        </div> -->
-
-        <section class="">
+        <!-- Body -->
+        <section>
+            <figure class="text-center">
+                <blockquote class="blockquote">
+                    <h3>Welcome to HAPPY LIVE</h3>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    <cite title="Slogan"> your unique show</cite>
+                </figcaption>
+            </figure>
+            <br>
+            <!-- carousel -->
             <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active"></li>
@@ -100,7 +90,6 @@
                             <h3 class="card-text">28 FEBRUARY 8:00 p.m. GMT</h3>
                         </div>
                     </div>
-
                     <div class="carousel-item" data-bs-interval="5000">
                         <img src="images/vetusta.jpg" class="d-block w-100" alt="Vetusta">
                         <div class="card-img-overlay m-5 text-white text-center">
@@ -128,11 +117,7 @@
                 </a>
             </div>
         </section>
-
     </div>
-    <!-- https://youtu.be/cZOQzGmhNZ8 -->
-
-    <!-- <button id="logout">LOGOUT</button><br><br> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"

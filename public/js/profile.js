@@ -1,23 +1,7 @@
-// var urlParams = new URLSearchParams(window.location.search)
-// let idArtist = urlParams.get('id') 
-
-// myModal.addEventListener('shown.bs.modal', function () {
-//     myInput.focus()
-//   })
-
-// var myModal = new bootstrap.Modal(document.getElementById('myModal'), options)
-
-// var myModal = document.getElementById('myModal')
-// var myInput = document.getElementById('myInput')
-
 axios
     .get('http://localhost:3000/api/users/me', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
-        // console.log(localStorage.name)
-        // console.log(localStorage._id)
-        // console.log(response.data)
-        // console.log(response.data.artist.genre)
-
+        
         let user = document.getElementById('profilePhoto')
         user.setAttribute('src', `${response.data.photo}`)
 
@@ -88,10 +72,7 @@ axios
 axios
     .get('http://localhost:3000/api/purchases', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
-        console.log("entra bien" + response.data)
-
         response.data.forEach((purchase, i) => {
-            console.log(purchase)
             let buy = document.getElementById('profilePurchases')
             let newBuy = document.createElement('div')
             newBuy.setAttribute('class', 'col')
@@ -119,27 +100,16 @@ document.getElementById('buttonDeposit').addEventListener('click', () => {
     axios
         .get('http://localhost:3000/api/users/me', { headers: { token: localStorage.getItem('token') } })
         .then(response => {
-
             deposit = document.getElementById('amountDeposit').value
             newBalance = parseInt(deposit)
-            console.log(newBalance)
             newBalance += response.data.balance
-            console.log(newBalance)
 
             axios
                 .put('http://localhost:3000/api/users/me', { balance: newBalance }, { headers: { token: localStorage.getItem('token') } })
                 .then(response => {
-                    console.log(response)
                     window.location = "http://localhost:3000/profile.html"
                 })
                 .catch(err => { alert('error update deposit') })
         })
         .catch(err => { alert('error deposit') })
 })
-      // .save()
-                    // let user = document.getElementById('profileBalance')
-                    // let newBalance = document.createElement('dd')
-                    // newBalance.setAttribute('class', 'd-flex justify-content-center')
-                    // newBalance.innerHTML = `${deposit}&ensp;<div class="d-flex"><img src="images/star.png"/></div>`
-                    // user.removeChild(user.firstChild)
-                    // user.appendChild(newBalance)

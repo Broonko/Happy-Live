@@ -11,12 +11,7 @@ document.getElementById('createShow').addEventListener('click', () => {
             "photo": document.getElementById('createPhoto').value
         }, { headers: { token: localStorage.getItem('token') } })
         .then(response => {
-            console.log(localStorage.name)
-            console.log(localStorage._id)
-            console.log(response.data)
             window.location = "http://localhost:3000/profile.html"
         })
         .catch(err => { alert('do not have permission') })
 })
-
-// .post('/', authUser, createShow)

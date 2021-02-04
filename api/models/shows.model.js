@@ -4,7 +4,7 @@ const showSchema = new mongoose.Schema({
     name: {
         type: String,
         maxlength: 100,
-        required: true //se le puede poner un mensaje?
+        required: [true, 'Name is required']
     },
     type: {
         type: String,
