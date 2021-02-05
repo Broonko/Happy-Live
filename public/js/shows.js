@@ -60,8 +60,7 @@ if (showName !== null) {
                 </div>
                 `
                 user.appendChild(newUser)
-                // `buyTicket${i}`
-
+         
                 var ticket = document.getElementById(show._id)
                 ticket.addEventListener('click', () => {
                     var showPrice = show.price

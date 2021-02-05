@@ -68,7 +68,7 @@ api
                 newUser.innerHTML = `
                 <div class="card h-100">
                     <img src="${show.photo}" class="card-img-top" alt="...">
-                    <div class="card-header border-success text-end"> <a href="#" class="btn btn-warning">Live stream</a></div>
+                    <div class="card-header border-success text-end"><a href="" class="btn btn-warning">Live stream</a></div>
                         <div class="card-body">
                             <p><h5 class="card-title">${show.name}</h5></p>
                             <p class="card-text">${show.date}</p>
@@ -95,7 +95,7 @@ api
             newBuy.innerHTML = `
             <div class="card h-100">
                 <img src="${purchase.show.photo}" class="card-img-top" alt="...">
-                <div class="card-header border-danger text-end"> <a href="showLive${i}.html" class="btn btn-danger">Watch</a></div>
+                <div class="card-header border-danger text-end"><a href="showLive${i}.html" class="btn btn-danger">Watch</a></div>
                     <div class="card-body">
                         <p><h5 class="card-title">${purchase.show.name}</h5></p>
                         <p class="card-text">${purchase.show.date}</p>

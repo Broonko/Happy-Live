@@ -9,7 +9,7 @@ document.getElementById('saveUser').addEventListener('click', () => {
         .put('/users/me', {
             "name": document.getElementById('editName').value,
             "email": document.getElementById('editEmail').value,
-            "passwd": document.getElementById('editPassword').value,
+            "password": document.getElementById('editPassword').value,
             "photo": document.getElementById('editPhoto').value,
             "address": document.getElementById('editAddress').value,
             "location": document.getElementById('editLocation').value,

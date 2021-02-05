@@ -2,6 +2,7 @@ const api = axios.create({
     baseURL: 'https://happy-live.herokuapp.com/api',
     timeout: 1000
 })
+
 var picker = new Pikaday({ field: document.getElementById('datepicker') });
 
 document.getElementById('createShow').addEventListener('click', () => {
