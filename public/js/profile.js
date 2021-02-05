@@ -1,6 +1,10 @@
 api
     .get('/users/me', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
+        if (response.data.artist.shows.length === 0) {
+            let list = document.getElementById('showsList')
+            list.innerText = ''
+        }
 
         let user = document.getElementById('profilePhoto')
         user.setAttribute('src', `${response.data.photo}`)
@@ -46,7 +50,7 @@ api
             user.appendChild(newUser)
 
             newUser = document.createElement('dd')
-            newUser.innerHTML = `<a href="createShow.html">Create a Show</a>`
+            newUser.innerHTML = `<a class="words" href="createShow.html">Create a Show</a>`
             user.appendChild(newUser)
 
             user = document.getElementById('profileGenre')
@@ -88,6 +92,10 @@ api
 api
     .get('/purchases', { headers: { token: localStorage.getItem('token') } })
     .then(response => {
+        if (response.data.length === 0) {
+            let list = document.getElementById('purchasesList')
+            list.innerText = ''
+        }
         response.data.forEach((purchase, i) => {
             let buy = document.getElementById('profilePurchases')
             let newBuy = document.createElement('div')

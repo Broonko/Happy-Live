@@ -3,16 +3,18 @@ api
     .then(response => {
         const artists = document.getElementById('artistsPhotos')
         response.data.forEach(artist => {
-            newArtist = document.createElement('a')
-            newArtist.setAttribute('href', 'profilePublic.html')
-            newArtist.innerHTML = `
+            if (artist.artist.genre) {
+                newArtist = document.createElement('a')
+                newArtist.setAttribute('href', 'profilePublic.html')
+                newArtist.innerHTML = `
             <img src="${artist.photo}" title="${artist.name}" class="img-fluid rounded p-3 d-inline-block desvanecer" alt="...">
             `
-            artists.appendChild(newArtist)
+                artists.appendChild(newArtist)
 
-            newArtist.addEventListener('click', () => {
-                localStorage.setItem('artistId', artist._id)
-            })
+                newArtist.addEventListener('click', () => {
+                    localStorage.setItem('artistId', artist._id)
+                })
+            }
         })
     })
     .catch(err => { alert('do not have permission') })
