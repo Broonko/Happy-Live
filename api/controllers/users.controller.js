@@ -11,6 +11,7 @@ module.exports = {
 }
 
 function getAllArtists(req, res) {
+  console.log(req.query)
   const query = req.query.name ? {name: {$regex: `${req.query.name}`, $options: 'i'}} : {}
   UserModel                                
     .find(query)

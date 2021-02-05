@@ -120,7 +120,7 @@ document.getElementById('buttonDeposit').addEventListener('click', () => {
             newBalance = parseInt(deposit)
             newBalance += response.data.balance
 
-            axios
+            api
                 .put('/users/me', { balance: newBalance }, { headers: { token: localStorage.getItem('token') } })
                 .then(response => {
                     window.location.href = "profile.html"
