@@ -1,5 +1,5 @@
 const api = axios.create({
-    baseURL: 'https://happy-live.herokuapp.com',
+    baseURL: 'https://happy-live.herokuapp.com/api',
     timeout: 1000
 })
 
@@ -37,7 +37,7 @@ document.getElementById('loginh').addEventListener('click', () => {
         window.location.reload()
 
     } else {
-        window.location = "http://localhost:3000/login.html"
+        window.location.href = "login.html"
     }
 })
 
@@ -45,15 +45,19 @@ document.getElementById('searchButton').addEventListener('click', () => {
     let search = document.getElementById('searchShow').value
 
     if (search === 'music') {
-        window.location = "http://localhost:3000/shows.html?type=music"
+        window.location.href = "shows.html"
+        localStorage.setItem('searchType', 'music')
     } else {
         if (search === 'comedy') {
-            window.location = "http://localhost:3000/shows.html?type=comedy"
+            window.location.href = "shows.html"
+            localStorage.setItem('searchType', 'comedy')
         } else {
             if (search === 'kids') {
-                window.location = "http://localhost:3000/shows.html?type=kids"
+                window.location.href = "shows.html"
+                localStorage.setItem('searchType', 'kids')
             } else {
-                window.location = `http://localhost:3000/shows.html?name=${search}`
+                window.location.href = "shows.html"
+                localStorage.setItem('searchName', search)
             }
         }
     }

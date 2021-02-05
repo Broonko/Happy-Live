@@ -17,7 +17,7 @@ document.getElementById('createShow').addEventListener('click', () => {
             "photo": document.getElementById('createPhoto').value
         }, { headers: { token: localStorage.getItem('token') } })
         .then(response => {
-            window.location = "http://localhost:3000/profile.html"
+            window.location.href = "profile.html"
         })
         .catch(err => { alert('do not have permission') })
 })

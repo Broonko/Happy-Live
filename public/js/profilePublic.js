@@ -1,6 +1,5 @@
-let urlParams = new URLSearchParams(window.location.search);
-var idprofilePublic = urlParams.get('id')
-
+let idprofilePublic = localStorage.artistId
+localStorage.removeItem('artistId')
 api
     .get(`/users/${idprofilePublic}`, { headers: { token: localStorage.getItem('token') } })
     .then(response => {

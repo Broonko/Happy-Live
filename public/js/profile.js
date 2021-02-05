@@ -46,7 +46,7 @@ api
             user.appendChild(newUser)
 
             newUser = document.createElement('dd')
-            newUser.innerHTML = `<a href="http://localhost:3000/createShow.html">Create a Show</a>`
+            newUser.innerHTML = `<a href="createShow.html">Create a Show</a>`
             user.appendChild(newUser)
 
             user = document.getElementById('profileGenre')
@@ -95,7 +95,7 @@ api
             newBuy.innerHTML = `
             <div class="card h-100">
                 <img src="${purchase.show.photo}" class="card-img-top" alt="...">
-                <div class="card-header border-danger text-end"> <a href="http://localhost:3000/showLive${i}.html" class="btn btn-danger">Watch</a></div>
+                <div class="card-header border-danger text-end"> <a href="showLive${i}.html" class="btn btn-danger">Watch</a></div>
                     <div class="card-body">
                         <p><h5 class="card-title">${purchase.show.name}</h5></p>
                         <p class="card-text">${purchase.show.date}</p>
@@ -123,7 +123,7 @@ document.getElementById('buttonDeposit').addEventListener('click', () => {
             axios
                 .put('/users/me', { balance: newBalance }, { headers: { token: localStorage.getItem('token') } })
                 .then(response => {
-                    window.location = "http://localhost:3000/profile.html"
+                    window.location.href = "profile.html"
                 })
                 .catch(err => { alert('error update deposit') })
         })

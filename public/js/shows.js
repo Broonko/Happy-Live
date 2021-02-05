@@ -1,6 +1,7 @@
-let urlParams = new URLSearchParams(window.location.search)
-var showName = urlParams.get('name')
-var showType = urlParams.get('type')
+var showName = localStorage.searchName
+var showType = localStorage.searchType
+localStorage.removeItem('searchName')
+localStorage.removeItem('searchType')
 
 if (showType !== null) {
     api

@@ -23,7 +23,7 @@ document.getElementById('saveUser').addEventListener('click', () => {
             "social.instagram": document.getElementById('editInstagram').value
         }, { headers: { token: localStorage.getItem('token') } })
         .then(response => {
-            window.location = "http://localhost:3000/profile.html"
+            window.location.href = "profile.html"
         })
         .catch(err => { alert('do not have permission') })
 })

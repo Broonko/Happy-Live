@@ -45,5 +45,5 @@ document.getElementById('login').addEventListener('click', () => {
 })
 
 function goHome() {
-    window.location = "http://localhost:3000/index.html"
+    window.location.href = "index.html"
 }
