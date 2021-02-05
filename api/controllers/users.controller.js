@@ -11,7 +11,6 @@ module.exports = {
 }
 
 function getAllArtists(req, res) {
-  if (res.locals.artist.genre) {
     const query = req.query.name ? { name: { $regex: `${req.query.name}`, $options: 'i' } } : {}
     UserModel
       .find(query)
@@ -24,7 +23,6 @@ function getAllArtists(req, res) {
       })
       .catch((err) => handleError(err, res))
   }
-}
 
 function getUserById(req, res) {
   UserModel
