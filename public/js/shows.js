@@ -105,7 +105,7 @@ if (showName !== null) {
                     <div class="card-header border-success text-end"> <button id="${show._id}" class="btn btn-warning">Go to Profile</button></div>
                         <div class="card-body">
                             <p><h5 class="card-title">${show.name}</h5></p>
-                            <p class="card-text">Type: ${show.artist.genre}</p>
+                            <p class="card-text">Genre: ${show.artist.genre}</p>
                             <p class="card-text">Location: ${show.location}</p>
                             <p class="card-text">Bio: ${show.artist.bio}</p>
                         </div>

@@ -11,18 +11,19 @@ module.exports = {
 }
 
 function getAllArtists(req, res) {
-  console.log(req.query)
-  const query = req.query.name ? {name: {$regex: `${req.query.name}`, $options: 'i'}} : {}
-  UserModel                                
-    .find(query)
-    .populate({
-      path: 'artist.shows',
-      'model': 'show'
-    })
-    .then(response => {
-      res.json(response)
-    })
-    .catch((err) => handleError(err, res))
+  if (res.locals.artist.genre) {
+    const query = req.query.name ? { name: { $regex: `${req.query.name}`, $options: 'i' } } : {}
+    UserModel
+      .find(query)
+      .populate({
+        path: 'artist.shows',
+        'model': 'show'
+      })
+      .then(response => {
+        res.json(response)
+      })
+      .catch((err) => handleError(err, res))
+  }
 }
 
 function getUserById(req, res) {
