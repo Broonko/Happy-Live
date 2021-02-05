@@ -1,7 +1,13 @@
 var showName = localStorage.searchName
-var showType = localStorage.searchType
 localStorage.removeItem('searchName')
-localStorage.removeItem('searchType')
+var showType = ''
+if (localStorage.searchType) {
+    showType = localStorage.searchType
+    localStorage.removeItem('searchType')
+} else {
+    let param = new URLSearchParams(window.location.search)
+    showType = param.get('type')
+}
 
 if (showType !== null) {
     api
